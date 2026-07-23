@@ -126,3 +126,40 @@ export function PersonSchema({
     />
   );
 }
+
+export function ArticleSchema({
+  title,
+  description,
+  path,
+  datePublished,
+  dateModified,
+  author,
+  image,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  dateModified?: string;
+  author: string;
+  image?: string;
+}) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: title,
+        description,
+        mainEntityOfPage: absoluteUrl(path, site.url),
+        url: absoluteUrl(path, site.url),
+        datePublished,
+        dateModified: dateModified ?? datePublished,
+        author: { "@type": "Person", name: author },
+        publisher: { "@id": absoluteUrl("/#organization", site.url) },
+        ...(image ? { image: absoluteUrl(image, site.url) } : {}),
+        inLanguage: "en",
+      }}
+    />
+  );
+}
