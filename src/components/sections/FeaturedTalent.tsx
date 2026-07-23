@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Section, SectionHeading } from "@/components/ui/section";
-import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
-import { TalentCard } from "@/components/cards/TalentCard";
+import { TalentCarousel } from "@/components/talent/TalentCarousel";
 import { team } from "@/content/team";
 
 export function FeaturedTalent() {
@@ -20,12 +19,8 @@ export function FeaturedTalent() {
         </Button>
       </div>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {team.map((member, i) => (
-          <Reveal key={member.slug} delay={i * 60}>
-            <TalentCard member={member} priority={i < 3} />
-          </Reveal>
-        ))}
+      <div className="mt-10">
+        <TalentCarousel members={team} />
       </div>
 
       <div className="mt-8 sm:hidden">
