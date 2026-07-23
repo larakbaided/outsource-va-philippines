@@ -34,7 +34,9 @@ export function buildMetadata({
     : undefined;
 
   return {
-    title,
+    // Omit `title` entirely when not provided so pages (like the homepage)
+    // correctly inherit the layout's title.default instead of an empty title.
+    ...(title ? { title } : {}),
     description,
     alternates: { canonical },
     robots: noIndex ? { index: false, follow: false } : undefined,
