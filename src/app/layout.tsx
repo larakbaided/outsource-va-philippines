@@ -32,10 +32,7 @@ export const metadata: Metadata = {
   applicationName: site.name,
   authors: [{ name: site.name }],
   creator: site.name,
-  icons: {
-    // PLACEHOLDER — replace /favicon.ico and add app icons before launch.
-    icon: "/favicon.ico",
-  },
+  // Favicons come from the file convention: src/app/icon.tsx + apple-icon.tsx.
   openGraph: {
     type: "website",
     siteName: site.name,
