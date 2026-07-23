@@ -2,22 +2,35 @@
 
 import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TalentCard } from "@/components/cards/TalentCard";
 import type { TeamMember } from "@/content/team";
 
 /**
- * Sliding carousel of talent cards — drag, touch-swipe, arrow buttons, and
- * dot indicators. Responsive: ~1 card on mobile, 2 on tablet, 3 on desktop.
+ * Sliding carousel of talent cards — drag, touch-swipe, arrow buttons, dot
+ * indicators, and autoplay that starts when the carousel scrolls into view.
+ * Autoplay pauses on hover and is disabled under prefers-reduced-motion.
+ * Responsive: ~1 card on mobile, 2 on tablet, 3 on desktop.
  */
 export function TalentCarousel({ members }: { members: TeamMember[] }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    loop: false,
-    containScroll: "trimSnaps",
-  });
+  // Lazy state (not a ref) so we don't read `.current` during render.
+  const [autoplay] = React.useState(() =>
+    Autoplay({
+      delay: 4000,
+      playOnInit: false, // starts only when scrolled into view
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    }),
+  );
 
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { align: "start", loop: true },
+    [autoplay],
+  );
+
+  const containerRef = React.useRef<HTMLDivElement>(null);
   const [canPrev, setCanPrev] = React.useState(false);
   const [canNext, setCanNext] = React.useState(false);
   const [snaps, setSnaps] = React.useState<number[]>([]);
@@ -43,8 +56,31 @@ export function TalentCarousel({ members }: { members: TeamMember[] }) {
     };
   }, [emblaApi, onSelect]);
 
+  // Start autoplay when the carousel enters the viewport; pause when it leaves.
+  React.useEffect(() => {
+    const node = containerRef.current;
+    if (!node || !emblaApi) return;
+
+    const reduced =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return; // respect reduced-motion: no autoplay
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) autoplay.play();
+          else autoplay.stop();
+        });
+      },
+      { threshold: 0.35 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [emblaApi, autoplay]);
+
   return (
-    <div>
+    <div ref={containerRef}>
       {/* Viewport */}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="-ml-5 flex touch-pan-y">
