@@ -11,6 +11,7 @@ import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { EngagementSection } from "@/components/sections/EngagementSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FaqSection } from "@/components/sections/FaqSection";
+import { BlogPreview } from "@/components/sections/BlogPreview";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 
 export const metadata: Metadata = buildMetadata({ path: "/" });
@@ -29,6 +30,7 @@ export default function HomePage() {
       <EngagementSection tone="default" />
       <TestimonialsSection tone="muted" />
       <FaqSection />
+      <BlogPreview tone="muted" />
       <FinalCtaSection />
     </>
   );
