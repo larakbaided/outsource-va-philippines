@@ -3,6 +3,7 @@ title: "Virtual Assistant vs. Executive Assistant: What's the Difference?"
 description: "Virtual assistant vs. executive assistant — what each role does, how they differ, and how to choose the right kind of support for your business."
 date: "2026-07-17"
 author: "Lara"
+coverImage: "/blog/virtual-assistant-vs-executive-assistant.webp"
 excerpt: "The titles get used interchangeably, but the roles aren't the same. Here's how to tell which one your business actually needs."
 tags: ["Executive Support", "Hiring"]
 keywords:

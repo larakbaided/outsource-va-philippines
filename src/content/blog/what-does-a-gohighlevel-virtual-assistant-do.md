@@ -3,6 +3,7 @@ title: "What Does a GoHighLevel Virtual Assistant Do? (And When to Hire One)"
 description: "A GoHighLevel virtual assistant builds workflows, pipelines, funnels, and campaigns so your CRM actually works. Here's what they do and when it's time to hire one."
 date: "2026-07-21"
 author: "Lara"
+coverImage: "/blog/what-does-a-gohighlevel-virtual-assistant-do.webp"
 excerpt: "GoHighLevel is powerful — and easy to underuse. Here's exactly what a GoHighLevel virtual assistant handles, and the signs it's time to bring one on."
 tags: ["GoHighLevel", "CRM"]
 keywords:

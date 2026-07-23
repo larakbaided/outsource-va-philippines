@@ -3,6 +3,7 @@ title: "How a Social Media Virtual Assistant Helps Grow Your Brand"
 description: "A social media virtual assistant keeps your brand consistent and active — content planning, scheduling, engagement, and reporting. Here's how they help you grow."
 date: "2026-07-23"
 author: "Lara"
+coverImage: "/blog/social-media-virtual-assistant-grow-your-brand.webp"
 excerpt: "Consistency is the hardest part of social media — and the most important. Here's how a social media virtual assistant keeps your brand showing up."
 tags: ["Social Media", "Marketing"]
 keywords:

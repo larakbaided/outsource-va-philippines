@@ -3,6 +3,7 @@ title: "15 Tasks You Should Delegate to a Virtual Assistant Today"
 description: "Not sure what to hand off? Here are 15 high-impact tasks to delegate to a virtual assistant — from inbox and calendar management to CRM, content, and reporting."
 date: "2026-07-19"
 author: "Lara"
+coverImage: "/blog/tasks-to-delegate-to-a-virtual-assistant.webp"
 excerpt: "If you're the bottleneck in your own business, these are the tasks to hand off first — organized by the time and energy they'll give back to you."
 tags: ["Delegation", "Virtual Assistants"]
 keywords:

@@ -3,6 +3,7 @@ title: "How to Hire a Virtual Assistant from the Philippines: A Complete Guide"
 description: "A practical, step-by-step guide to hiring a virtual assistant from the Philippines — where to find talent, how to vet them, what to pay, and how to onboard for long-term success."
 date: "2026-07-15"
 author: "Lara"
+coverImage: "/blog/how-to-hire-a-virtual-assistant-from-the-philippines.webp"
 excerpt: "Everything a business owner needs to know before hiring a Filipino virtual assistant — from defining the role to onboarding a professional who actually fits."
 tags: ["Hiring", "Virtual Assistants"]
 keywords:
