@@ -5,8 +5,20 @@
  * These are GENERAL STARTER TEMPLATES and do NOT constitute legal advice.
  * Have a qualified professional review and adapt them before launch.
  * Business-specific placeholders are pulled from src/content/site.ts.
+ *
+ * Commercial terms below restate docs/OFFER.md and read their figures from
+ * src/content/pricing.ts. Do not add a term, warranty or guarantee that is
+ * not written in docs/OFFER.md.
  * =========================================================================
  */
+
+import {
+  activationFee,
+  monthHours,
+  notIncludedInRate,
+  projectFloorUsd,
+  usd,
+} from "@/content/pricing";
 
 export type LegalSection = { heading: string; body: string[] };
 
@@ -120,9 +132,41 @@ export const termsSections: LegalSection[] = [
     ],
   },
   {
-    heading: "No Guaranteed Placement",
+    heading: "Our Role and the Working Relationship",
     body: [
-      "We aim to match businesses with suitable virtual professionals, but we do not guarantee the availability, placement, performance, or continued engagement of any specific professional. Matching depends on many factors discussed during consultation.",
+      "We place experienced Filipino professionals as independent contractors with client businesses, and manage the match. The professional is not an employee of the client and is not a payroll liability of the client.",
+      "The client directs the work day to day. We handle sourcing, vetting, matching, onboarding, invoicing and ongoing support. The client pays us monthly in advance, and we pay the contractor.",
+      "The terms of a specific engagement are set out in the services agreement entered into before that engagement begins.",
+    ],
+  },
+  {
+    heading: "Fees and Payment",
+    body: [
+      `On acceptance: ${activationFee.terms} ${activationFee.refundCondition}`,
+      "Before the start date: the first month is payable in advance, after the client has interviewed and chosen their professional.",
+      "Monthly thereafter: one month in advance, on the same date each month, by card or ACH auto-debit.",
+      `A full-time month is ${monthHours.fullTime} hours and a part-time month is ${monthHours.partTime} hours. Scoped projects are quoted per outcome, from ${usd(projectFloorUsd)}, and are payable 50% as a deposit and 50% on handover.`,
+      "Rates quoted in a proposal are valid for 14 days.",
+    ],
+  },
+  {
+    heading: "Ending an Engagement",
+    body: [
+      "Either the client or Outsource VA Philippines may end an engagement by giving 30 days' written notice. There is no exit fee.",
+    ],
+  },
+  {
+    heading: "What Is Not Included",
+    body: [
+      "The monthly rate does not include the following:",
+      ...notIncludedInRate.map((item) => `${item}.`),
+    ],
+  },
+  {
+    heading: "Placement and Replacement Support",
+    body: [
+      "We aim to match businesses with suitable virtual professionals, but we do not guarantee the availability, placement, performance, or continued engagement of any specific professional.",
+      "Replacement support is set out in each client's services agreement. It is not offered as a guarantee through this website.",
     ],
   },
   {
