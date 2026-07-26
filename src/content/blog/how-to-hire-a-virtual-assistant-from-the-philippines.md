@@ -84,7 +84,7 @@ A thoughtful first few weeks pays off for years.
 
 ## What about cost?
 
-Rates vary widely based on experience, specialization, and hours. Rather than chasing the lowest number, focus on **value**: an experienced professional who needs little hand-holding is almost always cheaper in the long run than a bargain hire who creates rework. Decide your budget based on the scope and skill the role genuinely requires.
+Rates vary with experience, specialization, and hours. Rather than chasing the lowest number, focus on **value**: an experienced professional who needs little hand-holding is almost always cheaper in the long run than a bargain hire who creates rework. Our own rates are published on our [pricing page](/pricing).
 
 ## The bottom line
 
