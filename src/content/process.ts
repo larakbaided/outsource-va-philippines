@@ -17,19 +17,19 @@ export const processSteps: ProcessStep[] = [
     number: 2,
     title: "Role Definition",
     description:
-      "We define the responsibilities, required skills, working hours, communication expectations, and ideal candidate profile.",
+      "We define the responsibilities, required skills, working hours, and communication expectations, then write it up and send it to you for sign-off.",
   },
   {
     number: 3,
     title: "Talent Matching",
     description:
-      "We recommend the professional whose experience and working style best align with your needs.",
+      "We put at least two candidates in front of you within 14 days, matched on experience and working style.",
   },
   {
     number: 4,
     title: "Interview & Selection",
     description:
-      "You meet your recommended candidate, ask questions, and decide whether the partnership feels right.",
+      "You interview the candidates and decide. You can decline and ask to see others.",
   },
   {
     number: 5,

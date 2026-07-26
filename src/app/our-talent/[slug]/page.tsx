@@ -121,7 +121,7 @@ export default async function TalentProfilePage({
                 <p className="flex justify-between gap-3">
                   <span className="text-muted-foreground">Work arrangement</span>
                   <span className="text-right font-medium">
-                    Discussed on consultation
+                    Independent contractor
                   </span>
                 </p>
               </div>

@@ -79,9 +79,9 @@ export const whyWorkWithUs = {
       "A long-term partnership mindset",
     ],
   },
-  /** Kept honest — this is a supportive intent, not a guarantee. */
+  /** Never describe replacement as a guarantee — see docs/OFFER.md. */
   disclaimer:
-    "Replacement and support arrangements are discussed and confirmed during your consultation and are not guarantees.",
+    "Replacement support is set out in each client's services agreement.",
 };
 
 export const finalCta = {

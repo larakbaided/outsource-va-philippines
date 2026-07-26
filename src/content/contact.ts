@@ -2,10 +2,19 @@
  * =========================================================================
  * CONTACT FORM CONFIGURATION
  * -------------------------------------------------------------------------
- * Dropdown options for the contact form. Budget ranges are PLACEHOLDERS and
- * must be approved before launch — edit them here in one place.
+ * Dropdown options for the contact form. Budget brackets are derived from the
+ * published rate card in @/content/pricing so they can never drift from it —
+ * do not write a figure into this file by hand.
  * =========================================================================
  */
+
+import {
+  highestFullTimeUsd,
+  lowestFullTimeUsd,
+  lowestMonthlyUsd,
+  projectFloorUsd,
+  usd,
+} from "@/content/pricing";
 
 export const serviceOptions = [
   "GoHighLevel and CRM Support",
@@ -33,15 +42,14 @@ export const teamSizeOptions = [
   "50+",
 ] as const;
 
-/** PLACEHOLDER budget ranges — replace with approved figures before launch. */
+/** Budget brackets. Every boundary is a real figure from the rate card. */
 export const budgetOptions = [
   "Not sure yet",
-  "Under $500 / month",
-  "$500 – $1,000 / month",
-  "$1,000 – $2,000 / month",
-  "$2,000 – $4,000 / month",
-  "$4,000+ / month",
-  "Project-based (one-time)",
+  `Under ${usd(lowestMonthlyUsd)} / month`,
+  `${usd(lowestMonthlyUsd)} – ${usd(lowestFullTimeUsd)} / month`,
+  `${usd(lowestFullTimeUsd)} – ${usd(highestFullTimeUsd)} / month`,
+  `Over ${usd(highestFullTimeUsd)} / month`,
+  `Scoped project (from ${usd(projectFloorUsd)})`,
 ] as const;
 
 export const referralOptions = [
