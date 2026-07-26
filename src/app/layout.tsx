@@ -2,11 +2,16 @@ import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
-import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { OrganizationSchema, WebSiteSchema } from "@/components/seo/JsonLd";
 import { Analytics } from "@/components/analytics/Analytics";
+
+/**
+ * Root layout — shared shell only.
+ *
+ * Site chrome lives one level down so the two hosts can differ:
+ *   src/app/(marketing)/layout.tsx  → outsourcevaphilippines.com
+ *   src/app/careers/layout.tsx      → careers.outsourcevaphilippines.com
+ * (the careers host is rewritten onto /careers by src/middleware.ts)
+ */
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -70,20 +75,13 @@ export default function RootLayout({
       className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <OrganizationSchema />
-        <WebSiteSchema />
         <a
           href="#main-content"
           className="sr-only z-50 rounded-md bg-primary px-4 py-2 text-primary-foreground focus:not-sr-only focus:absolute focus:left-4 focus:top-4"
         >
           Skip to content
         </a>
-        <AnnouncementBar />
-        <Header />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        {children}
         <Analytics />
       </body>
     </html>
