@@ -51,7 +51,7 @@ export function Header() {
 
         {/* Desktop navigation */}
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="hidden items-center gap-0.5 lg:flex xl:gap-1"
           aria-label="Primary"
         >
           {mainNav.map((item) => (
@@ -60,7 +60,9 @@ export function Header() {
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={cn(
-                "rounded-full px-3.5 py-2 text-[0.95rem] font-medium transition-colors",
+                // Tighter horizontal padding below xl so all eight nav items
+                // stay on one row from 1024px up.
+                "rounded-full px-2 py-2 text-[0.95rem] font-medium transition-colors xl:px-3.5",
                 isActive(item.href)
                   ? "text-accent-strong"
                   : "text-foreground/75 hover:text-foreground",
