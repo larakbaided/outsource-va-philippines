@@ -37,7 +37,7 @@ export const site = {
    * -------------------------------------------------------------------- */
   legal: {
     /** Registered/legal business name (may differ from the public brand). */
-    companyName: "Outsourcing VA Philippines",
+    companyName: "Outsource VA Philippines",
     /** PLACEHOLDER — Registered business address. */
     address: "[Registered Business Address]",
     /** PLACEHOLDER — Public business email. */
@@ -65,10 +65,11 @@ export const site = {
 
   /** Default social sharing / SEO copy. */
   seo: {
-    homeTitle: "Outsource VA Philippines | Premium Filipino Virtual Assistants",
+    homeTitle:
+      "Filipino Virtual Assistants for US Businesses | Outsource VA Philippines",
     homeDescription:
-      "Hire experienced Filipino virtual assistants through Outsource VA Philippines. Find specialists in GoHighLevel, executive support, digital marketing, social media, administration, and business operations.",
-    socialTitle: "Build Your Remote Team with Outsource VA Philippines",
+      "Hire experienced Filipino virtual assistants for your US business. Specialists in GoHighLevel, executive support, CRM and marketing automation, social media, and admin — carefully matched and agency-supported.",
+    socialTitle: "Reliable Filipino Virtual Assistants for Growing US Businesses",
     /**
      * Default social image. Points to the auto-generated OG image
      * (src/app/opengraph-image.tsx). To use a designed image instead, add

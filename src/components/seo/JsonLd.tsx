@@ -13,26 +13,44 @@ function JsonLd({ data }: { data: Record<string, unknown> }) {
 }
 
 export function OrganizationSchema() {
+  // Only include social profiles that are genuinely configured.
+  const sameAs = Object.values(site.social).filter(Boolean);
+
   return (
     <JsonLd
       data={{
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        // Plain Organization (not LocalBusiness/ProfessionalService): this is a
+        // remote agency with no public storefront, so a LocalBusiness type with
+        // no address would be a signal mismatch.
+        "@type": "Organization",
         "@id": absoluteUrl("/#organization", site.url),
         name: site.name,
         description: site.description,
         url: site.url,
+        logo: {
+          "@type": "ImageObject",
+          url: absoluteUrl("/android-chrome-512x512.png", site.url),
+          width: 512,
+          height: 512,
+        },
         image: absoluteUrl(site.seo.ogImage, site.url),
-        areaServed: "Worldwide",
+        // Truthful country-level origin (no fabricated street address).
+        address: { "@type": "PostalAddress", addressCountry: "PH" },
+        // Clients are served remotely in the United States.
+        areaServed: { "@type": "Country", name: "United States" },
+        founder: { "@type": "Person", name: site.founder.name },
         knowsAbout: [
           "GoHighLevel",
           "CRM Management",
+          "Marketing Automation",
           "Digital Marketing",
           "Executive Assistance",
           "Social Media Management",
           "Business Operations",
         ],
-        // Contact details are placeholders until approved business info exists.
+        // Only emitted when real social profiles exist in site.social.
+        ...(sameAs.length ? { sameAs } : {}),
         slogan: site.tagline,
       }}
     />
@@ -50,7 +68,34 @@ export function WebSiteSchema() {
         url: site.url,
         description: site.seo.homeDescription,
         publisher: { "@id": absoluteUrl("/#organization", site.url) },
-        inLanguage: "en",
+        inLanguage: "en-US",
+      }}
+    />
+  );
+}
+
+export function ServiceSchema({
+  name,
+  description,
+  path,
+  serviceType,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  serviceType?: string;
+}) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name,
+        description,
+        ...(serviceType ? { serviceType } : {}),
+        url: absoluteUrl(path, site.url),
+        provider: { "@id": absoluteUrl("/#organization", site.url) },
+        areaServed: { "@type": "Country", name: "United States" },
       }}
     />
   );
@@ -158,7 +203,7 @@ export function ArticleSchema({
         author: { "@type": "Person", name: author },
         publisher: { "@id": absoluteUrl("/#organization", site.url) },
         ...(image ? { image: absoluteUrl(image, site.url) } : {}),
-        inLanguage: "en",
+        inLanguage: "en-US",
       }}
     />
   );

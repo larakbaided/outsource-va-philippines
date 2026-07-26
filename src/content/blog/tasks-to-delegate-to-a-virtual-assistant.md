@@ -15,7 +15,7 @@ keywords:
 
 Most business owners know they *should* delegate — they just don't know where to start. The trick is to hand off the work that drains your time without requiring your unique expertise.
 
-Here are 15 tasks a virtual assistant can take off your plate, grouped by area. Start with the ones that eat the most of your week.
+Here are 15 tasks a [virtual assistant](/services) can take off your plate, grouped by area. Start with the ones that eat the most of your week.
 
 ## Administrative & executive support
 
@@ -30,7 +30,7 @@ Here are 15 tasks a virtual assistant can take off your plate, grouped by area. 
 6. **CRM cleanup** — deduping contacts, tagging, and keeping data reliable
 7. **Pipeline management** — updating deal stages so nothing slips
 8. **Following up with leads** — sending timely, consistent follow-ups
-9. **Building workflows and automations** (in GoHighLevel or similar) so routine follow-up runs itself
+9. **Building workflows and automations** (in [GoHighLevel](/services/gohighlevel-virtual-assistant) or similar) so routine follow-up runs itself
 10. **Reporting** — assembling weekly or monthly performance summaries
 
 ## Marketing & content
@@ -55,4 +55,4 @@ The goal isn't to offload everything — it's to reclaim your time for the work 
 
 Delegation fails when it's rushed. Give your virtual assistant context, document the process (or have them document as they learn), and start with a few tasks before expanding. Done right, each task you hand off is time you get back — permanently.
 
-Not sure which tasks fit your business? That's exactly what a consultation is for.
+Not sure which tasks fit your business? That's exactly what a [free consultation](/contact) is for.

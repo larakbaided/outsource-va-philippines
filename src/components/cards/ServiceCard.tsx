@@ -26,7 +26,7 @@ export function ServiceCard({ service }: { service: Service }) {
       </ul>
 
       <Link
-        href={`/services#${service.slug}`}
+        href={`/services/${service.pageSlug}`}
         onClick={() =>
           trackEvent("service_card_clicked", { service: service.slug })
         }

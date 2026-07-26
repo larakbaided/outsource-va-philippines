@@ -23,14 +23,14 @@ Here's a clear breakdown.
 
 - Administrative VAs
 - Marketing VAs
-- CRM / GoHighLevel VAs
+- CRM / [GoHighLevel VAs](/services/gohighlevel-virtual-assistant)
 - Social media VAs
 
 A VA is often **task- or project-focused** — they take defined responsibilities off your plate. You might have a VA who only manages your social media, or one who only handles CRM cleanup.
 
 ## What an executive assistant does
 
-An executive assistant (EA) is a *type* of virtual assistant, but with a specific focus: **supporting a leader directly.** An EA's job is to protect your time and keep your world organized:
+An [executive assistant](/services/executive-assistant) (EA) is a *type* of virtual assistant, but with a specific focus: **supporting a leader directly.** An EA's job is to protect your time and keep your world organized:
 
 - Managing your inbox and calendar as your gatekeeper
 - Coordinating meetings and communication on your behalf
@@ -61,4 +61,4 @@ There's no wrong answer — just a right *fit* for where your business is right 
 
 ## Not sure which fits?
 
-The honest way to decide is to look at where your time actually goes. In a consultation, we'll map out your tasks and recommend the type of professional — general VA or executive assistant — that would make the biggest difference for you.
+The honest way to decide is to look at where your time actually goes. In a [free consultation](/contact), we'll map out your tasks and recommend the type of professional — general VA or executive assistant — that would make the biggest difference for you.

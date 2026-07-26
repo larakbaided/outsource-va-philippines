@@ -11,6 +11,7 @@ export type NavItem = {
 /** Primary header navigation. */
 export const mainNav: NavItem[] = [
   { label: "Services", href: "/services" },
+  { label: "Industries", href: "/industries" },
   { label: "Our Talent", href: "/our-talent" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "About", href: "/about" },
@@ -31,7 +32,9 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
     items: [
       { label: "About", href: "/about" },
       { label: "How It Works", href: "/how-it-works" },
+      { label: "Why Filipino VAs", href: "/why-hire-filipino-virtual-assistants" },
       { label: "Our Talent", href: "/our-talent" },
+      { label: "Industries", href: "/industries" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
     ],
@@ -39,10 +42,11 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
   {
     title: "Services",
     items: [
-      { label: "GoHighLevel & CRM", href: "/services#gohighlevel" },
-      { label: "Executive Support", href: "/services#executive" },
-      { label: "Digital Marketing", href: "/services#marketing" },
-      { label: "Social Media", href: "/services#social-media" },
+      { label: "GoHighLevel VA", href: "/services/gohighlevel-virtual-assistant" },
+      { label: "GoHighLevel Onboarding", href: "/services/gohighlevel-onboarding" },
+      { label: "Executive Assistant", href: "/services/executive-assistant" },
+      { label: "Digital Marketing", href: "/services/digital-marketing-support" },
+      { label: "Social Media", href: "/services/social-media-management" },
     ],
   },
   {

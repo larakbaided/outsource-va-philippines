@@ -15,6 +15,21 @@ export const faqs: Faq[] = [
       "We provide experienced virtual professionals across GoHighLevel and CRM support, executive and administrative assistance, digital marketing, social media management, and project or operations support. During your consultation we identify which type of professional best fits your goals.",
   },
   {
+    question: "Do you work with businesses in the United States?",
+    answer:
+      "Yes. Most of the businesses we support are based in the United States. Our Filipino virtual professionals are experienced working remotely with US companies, and we coordinate communication, tools, and working hours around your team.",
+  },
+  {
+    question: "How much does a Filipino virtual assistant cost?",
+    answer:
+      "Cost depends on the role, scope, experience level, and hours involved, so we don't publish fixed rates that could be misleading. Hiring a skilled virtual assistant from the Philippines is generally more cost-effective than hiring locally in the US. We share clear, specific pricing during your consultation once we understand what you need.",
+  },
+  {
+    question: "Why hire a virtual assistant from the Philippines?",
+    answer:
+      "The Philippines has a large, experienced remote-work workforce with strong English proficiency and a professional service culture. For US businesses, that means dependable support, clear communication, and cost efficiency compared with hiring locally — without compromising on skill.",
+  },
+  {
     question: "How do you screen your professionals?",
     answer:
       "We select professionals based on relevant experience, demonstrated skills, and communication ability. Rather than matching a job title to a résumé, we look for people whose background and working style fit the way real businesses operate.",

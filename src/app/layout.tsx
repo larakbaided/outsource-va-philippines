@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
@@ -32,7 +32,17 @@ export const metadata: Metadata = {
   applicationName: site.name,
   authors: [{ name: site.name }],
   creator: site.name,
-  // Favicons come from the file convention: src/app/icon.tsx + apple-icon.tsx.
+  // Static favicon set lives in /public (generated from the brand mark).
+  // These emit stable, crawlable <link> tags that Google Search can index.
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     siteName: site.name,
@@ -47,12 +57,16 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#1f3a2e",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="en"
+      lang="en-US"
       className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">

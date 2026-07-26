@@ -2,14 +2,18 @@
  * =========================================================================
  * SERVICES
  * -------------------------------------------------------------------------
- * Drives the homepage services preview and the full Services page. Edit copy,
- * task lists, and linked team members here. `icon` maps to a Lucide icon in
- * the ServiceIcon component. `relatedTeam` holds team member slugs.
+ * Drives the homepage services preview, the /services overview page, and the
+ * dedicated /services/[pageSlug] pages. Edit copy, task lists, page SEO, and
+ * linked team members here. `icon` maps to a Lucide icon in the ServiceIcon
+ * component. `relatedTeam` / `relatedServices` hold slugs.
  * =========================================================================
  */
 
 export type Service = {
+  /** Anchor id used on the /services overview page (e.g. /services#gohighlevel). */
   slug: string;
+  /** Keyword-rich URL slug for the dedicated page (/services/{pageSlug}). */
+  pageSlug: string;
   icon: "workflow" | "clipboard" | "megaphone" | "share" | "folder" | "layers";
   title: string;
   /** Short label used in nav/preview. */
@@ -20,17 +24,37 @@ export type Service = {
   forWho: string;
   /** Condensed task list for the homepage card. */
   keyTasks: string[];
-  /** Full responsibilities for the Services page. */
+  /** Full responsibilities for the service pages. */
   responsibilities: string[];
   tools: string[];
   outcomes: string[];
   exampleTasks: string[];
   relatedTeam: string[];
+
+  /* ---- Dedicated-page SEO + narrative content ---- */
+  /** Schema.org Service.serviceType. */
+  serviceType: string;
+  /** Concise meta title (brand is appended via the layout template). */
+  metaTitle: string;
+  metaDescription: string;
+  /** Page H1 — keyword-led, with US framing. */
+  h1: string;
+  /** Opening paragraph for the dedicated page. */
+  intro: string;
+  /** Customer problems this service solves. */
+  problems: string[];
+  /** Page-specific FAQs — also power FAQPage schema on the page. */
+  faqs: { question: string; answer: string }[];
+  /** Related service slugs (anchor `slug` values) for internal linking. */
+  relatedServices: string[];
+  /** Target keywords for reference (not injected as meta keywords). */
+  keywords: string[];
 };
 
 export const services: Service[] = [
   {
     slug: "gohighlevel",
+    pageSlug: "gohighlevel-virtual-assistant",
     icon: "workflow",
     title: "GoHighLevel & CRM Specialists",
     shortTitle: "GoHighLevel & CRM",
@@ -71,9 +95,127 @@ export const services: Service[] = [
       "Migrate and clean contact data before a launch",
     ],
     relatedTeam: ["lara", "cassie"],
+    serviceType: "GoHighLevel & CRM Management",
+    metaTitle: "GoHighLevel Virtual Assistant",
+    metaDescription:
+      "Hire a GoHighLevel virtual assistant from the Philippines to build workflows, pipelines, funnels, and automations. Experienced GHL specialists supporting US agencies and businesses.",
+    h1: "GoHighLevel Virtual Assistants for US Businesses",
+    intro:
+      "A GoHighLevel virtual assistant takes the technical weight of your CRM off your plate — building and maintaining the workflows, pipelines, funnels, and automations that run your marketing and client management. Our GHL specialists support US agencies, coaches, and service businesses remotely, so your platform works the way it should.",
+    problems: [
+      "Your GoHighLevel account is set up but underused or disorganized.",
+      "Automations break, misfire, or were never finished.",
+      "Leads slip through because follow-up isn't systematized.",
+      "You're working inside the CRM instead of on your business.",
+    ],
+    faqs: [
+      {
+        question: "What can a GoHighLevel virtual assistant do?",
+        answer:
+          "They build and maintain workflows, pipelines, calendars, funnels, forms, and email/SMS campaigns, clean up CRM data, and troubleshoot integrations — the day-to-day GoHighLevel work most owners don't have time for.",
+      },
+      {
+        question: "Do your GoHighLevel VAs work with agencies?",
+        answer:
+          "Yes. Many of our clients are agencies and coaches who run their own or their clients' marketing on GoHighLevel. We can support your sub-accounts, snapshots, and recurring build work.",
+      },
+      {
+        question: "Can you fix or clean up an existing GoHighLevel account?",
+        answer:
+          "Yes. We regularly reorganize messy pipelines, repair broken automations, and clean contact data so your account is reliable for reporting and follow-up.",
+      },
+    ],
+    relatedServices: ["gohighlevel-onboarding", "marketing"],
+    keywords: [
+      "GoHighLevel virtual assistant",
+      "GHL virtual assistant",
+      "GoHighLevel specialist",
+      "GoHighLevel automation specialist",
+      "hire a GoHighLevel expert",
+      "outsource GoHighLevel management",
+    ],
+  },
+  {
+    slug: "gohighlevel-onboarding",
+    pageSlug: "gohighlevel-onboarding",
+    icon: "workflow",
+    title: "GoHighLevel Onboarding Specialists",
+    shortTitle: "GHL Onboarding",
+    tagline: "Launch on GoHighLevel the right way.",
+    description:
+      "Specialists who set up your GoHighLevel account correctly from day one — account structure, migrations, snapshots, integrations, and team training — so you start with a platform that works instead of a blank slate.",
+    forWho:
+      "Agencies and businesses new to GoHighLevel (or switching from another CRM) who want their account, sub-accounts, and core systems set up properly before they go live.",
+    keyTasks: [
+      "Account & sub-account setup",
+      "Data & CRM migration",
+      "Snapshot configuration",
+      "Integrations & domains",
+      "Team training & handover",
+    ],
+    responsibilities: [
+      "Account and sub-account structure",
+      "Data migration from your previous CRM",
+      "Snapshot setup and customization",
+      "Calendar, pipeline, and form configuration",
+      "Email, SMS, and domain setup",
+      "Integration with your existing tools",
+      "Team training and documentation",
+    ],
+    tools: ["GoHighLevel", "Twilio", "Mailgun", "Zapier / Make", "Google Workspace"],
+    outcomes: [
+      "A GoHighLevel account configured correctly from the start",
+      "Clean data migrated without loss",
+      "A team that knows how to use the platform",
+    ],
+    exampleTasks: [
+      "Migrate contacts and pipelines from another CRM into GoHighLevel",
+      "Configure a reusable snapshot for new sub-accounts",
+      "Connect domains, email, and phone (Twilio) correctly",
+      "Run a team walkthrough and leave documentation",
+    ],
+    relatedTeam: ["lara", "cassie"],
+    serviceType: "GoHighLevel Onboarding",
+    metaTitle: "GoHighLevel Onboarding Specialist",
+    metaDescription:
+      "Hire a GoHighLevel onboarding specialist from the Philippines to set up your account, migrate data, configure snapshots, and train your team. Start on GHL the right way.",
+    h1: "GoHighLevel Onboarding Specialists for US Businesses",
+    intro:
+      "Getting onto GoHighLevel is where most businesses get stuck. A GoHighLevel onboarding specialist sets up your account the right way — structure, migration, snapshots, integrations, and team training — so you launch with a working platform instead of an empty one.",
+    problems: [
+      "You signed up for GoHighLevel and don't know where to start.",
+      "Migrating from another CRM feels risky and overwhelming.",
+      "Your sub-accounts and snapshots aren't set up to scale.",
+      "Your team doesn't know how to use the platform yet.",
+    ],
+    faqs: [
+      {
+        question: "What does GoHighLevel onboarding include?",
+        answer:
+          "Account and sub-account setup, data migration from your previous CRM, snapshot configuration, calendar/pipeline/form setup, email/SMS and domain configuration, integrations, and team training with documentation.",
+      },
+      {
+        question: "Can you migrate from another CRM to GoHighLevel?",
+        answer:
+          "Yes. We migrate contacts, pipelines, and core assets carefully to avoid data loss, and verify everything before you go live.",
+      },
+      {
+        question: "Is onboarding a one-time project?",
+        answer:
+          "Usually yes — it's a scoped setup project. Many clients then move to ongoing GoHighLevel support once they're live, which we also provide.",
+      },
+    ],
+    relatedServices: ["gohighlevel", "project-operations"],
+    keywords: [
+      "GoHighLevel onboarding specialist",
+      "GoHighLevel setup",
+      "GHL onboarding",
+      "GoHighLevel migration",
+    ],
   },
   {
     slug: "executive",
+    pageSlug: "executive-assistant",
     icon: "clipboard",
     title: "Executive Assistants",
     shortTitle: "Executive Support",
@@ -114,9 +256,41 @@ export const services: Service[] = [
       "Draft a standard operating procedure for a recurring task",
     ],
     relatedTeam: ["wayne"],
+    serviceType: "Executive Assistance",
+    metaTitle: "Executive Virtual Assistant",
+    metaDescription:
+      "Hire an executive virtual assistant from the Philippines to manage your inbox, calendar, communication, and daily operations. Experienced remote EAs for busy US founders and executives.",
+    h1: "Executive Virtual Assistants for US Founders and Executives",
+    intro:
+      "An executive virtual assistant protects your time. Ours manage inboxes, calendars, meetings, research, and documentation for busy US founders and executives — bringing calm structure to your day so you can focus on the work only you can do.",
+    problems: [
+      "Your inbox and calendar run you, not the other way around.",
+      "Follow-ups and details fall through the cracks.",
+      "You're doing administrative work instead of leading.",
+      "There's no one keeping your day organized and on track.",
+    ],
+    faqs: [
+      {
+        question: "What's the difference between an executive VA and a general VA?",
+        answer:
+          "An executive assistant supports a leader directly — managing communication, scheduling, and priorities with a high level of ownership and discretion — while a general VA handles broader recurring administrative tasks.",
+      },
+      {
+        question: "Can an executive assistant work in my time zone?",
+        answer:
+          "Many of our professionals accommodate US working hours. Specific hours and overlap are confirmed during your consultation.",
+      },
+    ],
+    relatedServices: ["administrative", "project-operations"],
+    keywords: [
+      "executive virtual assistant",
+      "executive assistant Philippines",
+      "remote executive assistant",
+    ],
   },
   {
     slug: "marketing",
+    pageSlug: "digital-marketing-support",
     icon: "megaphone",
     title: "Digital Marketing Professionals",
     shortTitle: "Digital Marketing",
@@ -155,9 +329,41 @@ export const services: Service[] = [
       "Assemble a monthly marketing performance report",
     ],
     relatedTeam: ["lara"],
+    serviceType: "Digital Marketing Support",
+    metaTitle: "Digital Marketing Virtual Assistant",
+    metaDescription:
+      "Hire a digital marketing virtual assistant from the Philippines to plan and execute campaigns, funnels, email, and reporting. Experienced remote marketing support for US businesses.",
+    h1: "Digital Marketing Virtual Assistants for US Businesses",
+    intro:
+      "A digital marketing virtual assistant helps you finish the campaigns and systems that keep stalling — funnels, email, launches, and reporting. Ours bring experienced hands to plan, execute, and report on the marketing work your business keeps putting off.",
+    problems: [
+      "Marketing projects start but never get finished.",
+      "Your email list and nurture sequences are neglected.",
+      "You don't have clear reporting on what's working.",
+      "Launches feel chaotic and last-minute.",
+    ],
+    faqs: [
+      {
+        question: "What does a digital marketing virtual assistant handle?",
+        answer:
+          "Campaign support, funnel planning, email marketing, lead-nurture systems, landing-page updates, content coordination, and analytics reporting — the execution behind your marketing plan.",
+      },
+      {
+        question: "Do your marketing VAs know GoHighLevel?",
+        answer:
+          "Many do. If your marketing runs on GoHighLevel, we can match you with someone experienced in building funnels, campaigns, and automations inside the platform.",
+      },
+    ],
+    relatedServices: ["gohighlevel", "social-media"],
+    keywords: [
+      "digital marketing virtual assistant",
+      "marketing virtual assistant",
+      "email marketing assistant",
+    ],
   },
   {
     slug: "social-media",
+    pageSlug: "social-media-management",
     icon: "share",
     title: "Social Media Managers",
     shortTitle: "Social Media",
@@ -196,9 +402,41 @@ export const services: Service[] = [
       "Report on reach, engagement, and growth",
     ],
     relatedTeam: ["joshua", "cath"],
+    serviceType: "Social Media Management",
+    metaTitle: "Social Media Virtual Assistant",
+    metaDescription:
+      "Hire a social media virtual assistant from the Philippines to plan content, schedule posts, engage your community, and report on results. Consistent, on-brand support for US brands.",
+    h1: "Social Media Virtual Assistants for US Brands",
+    intro:
+      "A social media virtual assistant keeps your presence active and on-brand — planning content, scheduling posts, engaging your community, and reporting on results. Ours help US brands and personal brands show up consistently without doing it all themselves.",
+    problems: [
+      "Posting is inconsistent and reactive.",
+      "You don't have time to engage or reply.",
+      "Content ideas never turn into a real calendar.",
+      "You can't tell whether social is actually working.",
+    ],
+    faqs: [
+      {
+        question: "Which platforms do your social media VAs support?",
+        answer:
+          "Commonly Instagram, Facebook, LinkedIn, TikTok, and YouTube — planning, scheduling, captions, community engagement, short-form repurposing, and reporting. Specific platforms are matched to your brand.",
+      },
+      {
+        question: "Do they create graphics and video?",
+        answer:
+          "They handle basic graphics in Canva and short-form editing in tools like CapCut, and coordinate with designers for anything more advanced.",
+      },
+    ],
+    relatedServices: ["marketing", "administrative"],
+    keywords: [
+      "social media virtual assistant",
+      "social media manager Philippines",
+      "content scheduling VA",
+    ],
   },
   {
     slug: "administrative",
+    pageSlug: "administrative-virtual-assistant",
     icon: "folder",
     title: "Administrative Virtual Assistants",
     shortTitle: "Administrative Support",
@@ -235,9 +473,41 @@ export const services: Service[] = [
       "Coordinate a recurring weekly schedule",
     ],
     relatedTeam: ["wayne"],
+    serviceType: "Administrative Support",
+    metaTitle: "Administrative Virtual Assistant",
+    metaDescription:
+      "Hire an administrative virtual assistant from the Philippines for data entry, scheduling, research, and day-to-day organization. Dependable remote admin support for US businesses.",
+    h1: "Administrative Virtual Assistants for US Businesses",
+    intro:
+      "An administrative virtual assistant handles the recurring details that keep a business running — data entry, organization, scheduling, research, and coordination. Ours bring dependable, organized support so the everyday work gets done without you chasing it.",
+    problems: [
+      "Recurring admin tasks pile up and get delayed.",
+      "Files and data are disorganized and hard to find.",
+      "You're doing low-value work instead of growing the business.",
+      "Nothing is documented, so everything depends on you.",
+    ],
+    faqs: [
+      {
+        question: "What tasks can an administrative VA take over?",
+        answer:
+          "Data entry, document and file management, scheduling and coordination, research and list building, basic customer support, and process documentation.",
+      },
+      {
+        question: "Can I start part-time?",
+        answer:
+          "Yes. Administrative support works well part-time or project-based. We'll right-size the arrangement during your consultation.",
+      },
+    ],
+    relatedServices: ["executive", "project-operations"],
+    keywords: [
+      "administrative virtual assistant",
+      "admin virtual assistant",
+      "general virtual assistant",
+    ],
   },
   {
     slug: "project-operations",
+    pageSlug: "crm-automation",
     icon: "layers",
     title: "Project & Operations Support",
     shortTitle: "Project & Operations",
@@ -274,11 +544,47 @@ export const services: Service[] = [
       "Document a completed setup for the team",
     ],
     relatedTeam: ["lara", "cassie"],
+    serviceType: "CRM & Automation Setup",
+    metaTitle: "CRM & Automation Virtual Assistant",
+    metaDescription:
+      "Hire a CRM and marketing automation specialist from the Philippines for focused setup, migration, and integration projects. Organized project execution for US businesses.",
+    h1: "CRM & Marketing Automation Specialists",
+    intro:
+      "Some work is a project, not a role — a CRM setup, a migration, or an automation build that needs to be done right. Our specialists scope, execute, and document focused CRM and marketing-automation projects for US businesses, with clear ownership from start to finish.",
+    problems: [
+      "A system needs setting up and no one owns it.",
+      "You're migrating platforms and dread the data mess.",
+      "Automations need building before a launch.",
+      "Past setups were never documented or handed over.",
+    ],
+    faqs: [
+      {
+        question: "Do you handle one-off projects, not just ongoing support?",
+        answer:
+          "Yes. For focused CRM, automation, migration, or setup work, we offer project-based support with a clear scope, a timeline discussion, and a documented handover.",
+      },
+      {
+        question: "Which platforms do you work with?",
+        answer:
+          "GoHighLevel most often, plus common automation tools like Zapier and Make, and standard business apps. Specific tools are matched to your project.",
+      },
+    ],
+    relatedServices: ["gohighlevel", "gohighlevel-onboarding"],
+    keywords: [
+      "marketing automation virtual assistant",
+      "CRM virtual assistant",
+      "CRM setup specialist",
+      "automation specialist",
+    ],
   },
 ];
 
 export function getService(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
+}
+
+export function getServiceByPageSlug(pageSlug: string): Service | undefined {
+  return services.find((s) => s.pageSlug === pageSlug);
 }
 
 /** The four headline services shown on the homepage preview. */

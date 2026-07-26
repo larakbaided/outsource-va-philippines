@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { ConsultationButton } from "@/components/ConsultationButton";
 import { TalentAvatar } from "@/components/talent/TalentAvatar";
 import { team } from "@/content/team";
-import { heroLabels } from "@/content/home";
+import { hero, heroLabels } from "@/content/home";
 
 export function Hero() {
   // A clean, aligned collage of three founding professionals.
@@ -24,15 +24,13 @@ export function Hero() {
         <div className="max-w-xl">
           <Reveal>
             <Badge variant="accent" size="md" className="mb-5">
-              Premium Filipino Virtual Talent
+              {hero.badge}
             </Badge>
             <h1 className="text-4xl leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
-              Exceptional virtual talent for businesses ready to grow.
+              {hero.headline}
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              Build a more capable, efficient team with experienced virtual
-              professionals carefully matched to your goals, systems, and working
-              style.
+              {hero.subheadline}
             </p>
           </Reveal>
 
@@ -44,7 +42,7 @@ export function Hero() {
               </Button>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              No pressure. Just a 30-minute conversation about your needs.
+              {hero.reassurance}
             </p>
           </Reveal>
         </div>

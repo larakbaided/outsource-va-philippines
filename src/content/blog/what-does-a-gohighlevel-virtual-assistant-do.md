@@ -15,7 +15,7 @@ keywords:
 
 GoHighLevel is one of the most capable platforms for managing marketing, CRM, and client communication in one place. But that power comes with complexity — and most businesses use only a fraction of what it can do.
 
-A **GoHighLevel virtual assistant** is a professional who sets up, maintains, and improves your GoHighLevel account so it actually drives results instead of sitting half-configured. Here's what that looks like in practice.
+A **[GoHighLevel virtual assistant](/services/gohighlevel-virtual-assistant)** is a professional who sets up, maintains, and improves your GoHighLevel account so it actually drives results instead of sitting half-configured. Here's what that looks like in practice.
 
 ## What a GoHighLevel virtual assistant handles
 
@@ -49,7 +49,7 @@ You'll likely benefit from a GoHighLevel VA if:
 - You keep meaning to "set up the automations" and never find the time
 - Your pipeline is **messy** and you don't trust the data
 - You're launching something and need **funnels, forms, and campaigns** built properly
-- You're **migrating to GoHighLevel** from another CRM and want it done right
+- You're [**migrating to GoHighLevel**](/services/gohighlevel-onboarding) from another CRM and want it done right
 
 If any of those sound familiar, you're leaving results on the table.
 

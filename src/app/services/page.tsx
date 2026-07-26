@@ -18,9 +18,9 @@ import { getTeamMember } from "@/content/team";
 
 export const metadata: Metadata = buildMetadata({
   path: "/services",
-  title: "Services",
+  title: "Virtual Assistant Services",
   description:
-    "Explore virtual assistant services from Outsource VA Philippines — GoHighLevel & CRM, executive support, digital marketing, social media, administrative, and project support.",
+    "Filipino virtual assistant services for US businesses — GoHighLevel, GHL onboarding, executive and administrative support, CRM and marketing automation, digital marketing, and social media.",
 });
 
 export default function ServicesPage() {
@@ -75,7 +75,14 @@ export default function ServicesPage() {
               {/* Left: intro */}
               <Reveal>
                 <ServiceIconTile name={service.icon} />
-                <h2 className="mt-5 text-3xl sm:text-4xl">{service.title}</h2>
+                <h2 className="mt-5 text-3xl sm:text-4xl">
+                  <Link
+                    href={`/services/${service.pageSlug}`}
+                    className="transition-colors hover:text-accent-strong"
+                  >
+                    {service.title}
+                  </Link>
+                </h2>
                 <p className="mt-3 text-lg font-medium text-accent-strong">
                   {service.tagline}
                 </p>
@@ -122,10 +129,17 @@ export default function ServicesPage() {
                   </div>
                 )}
 
-                <div className="mt-7">
+                <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
                   <ConsultationButton source={`service-${service.slug}`}>
                     Discuss This Service
                   </ConsultationButton>
+                  <Link
+                    href={`/services/${service.pageSlug}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-accent-strong transition-colors hover:text-accent"
+                  >
+                    View the full {service.shortTitle} page
+                    <ArrowRight className="size-4" />
+                  </Link>
                 </div>
               </Reveal>
 

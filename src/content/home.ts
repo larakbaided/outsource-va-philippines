@@ -17,6 +17,18 @@ export const trustIndicators: TrustIndicator[] = [
   { icon: "infinity", label: "Built for Long-Term Partnerships" },
 ];
 
+/**
+ * Homepage hero copy. Kept here (not hardcoded in the component) so a
+ * non-technical editor can update the headline and value proposition safely.
+ */
+export const hero = {
+  badge: "Filipino Virtual Assistants for US Businesses",
+  headline: "Reliable Filipino virtual assistants for growing US businesses.",
+  subheadline:
+    "From GoHighLevel and CRM automation to executive, administrative, marketing, and social media support — we match US businesses with experienced Filipino virtual professionals, then support the partnership over time.",
+  reassurance: "No pressure. Just a 30-minute conversation about your needs.",
+};
+
 /** Floating labels around the hero visual. */
 export const heroLabels: string[] = [
   "GoHighLevel",

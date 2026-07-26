@@ -10,8 +10,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Markdown } from "@/components/blog/Markdown";
 import { PostCard } from "@/components/blog/PostCard";
+import { TalentAvatar } from "@/components/talent/TalentAvatar";
 import { ConsultationButton } from "@/components/ConsultationButton";
 import { BreadcrumbSchema, ArticleSchema } from "@/components/seo/JsonLd";
+import { team } from "@/content/team";
 import {
   getAllSlugs,
   getPostBySlug,
@@ -57,6 +59,8 @@ export default async function BlogPostPage({
 
   const { meta, content } = post;
   const related = getRelatedPosts(slug);
+  // Link the byline/author box to a real team profile when the author matches.
+  const authorMember = team.find((m) => m.name === meta.author);
 
   return (
     <>
@@ -103,9 +107,16 @@ export default async function BlogPostPage({
               {meta.excerpt}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-border py-4 text-sm text-muted-foreground">
-              <span className="font-medium text-foreground">
-                {meta.author}
-              </span>
+              {authorMember ? (
+                <Link
+                  href={`/our-talent/${authorMember.slug}`}
+                  className="font-medium text-foreground transition-colors hover:text-accent-strong"
+                >
+                  {meta.author}
+                </Link>
+              ) : (
+                <span className="font-medium text-foreground">{meta.author}</span>
+              )}
               <span className="inline-flex items-center gap-1.5">
                 <Calendar className="size-4" />
                 {formatDate(meta.date)}
@@ -146,6 +157,42 @@ export default async function BlogPostPage({
                     {tag}
                   </Badge>
                 ))}
+              </div>
+            )}
+
+            {/* Author bio — E-E-A-T signal linking to the real team profile */}
+            {authorMember && (
+              <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 sm:flex-row sm:items-center">
+                <Link
+                  href={`/our-talent/${authorMember.slug}`}
+                  className="shrink-0"
+                  aria-label={`View ${authorMember.name}'s profile`}
+                >
+                  <TalentAvatar
+                    member={authorMember}
+                    className="size-16 rounded-full"
+                    sizes="64px"
+                  />
+                </Link>
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-accent-strong">
+                    Written by
+                  </p>
+                  <p className="mt-1 font-medium">
+                    <Link
+                      href={`/our-talent/${authorMember.slug}`}
+                      className="transition-colors hover:text-accent-strong"
+                    >
+                      {authorMember.name}
+                    </Link>{" "}
+                    <span className="font-normal text-muted-foreground">
+                      — {authorMember.role}
+                    </span>
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {authorMember.shortBio}
+                  </p>
+                </div>
               </div>
             )}
 
