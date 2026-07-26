@@ -3,6 +3,7 @@ import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/cards/ServiceCard";
+import { ToolsMarquee } from "@/components/sections/ToolsMarquee";
 import { services, featuredServiceSlugs } from "@/content/services";
 
 export function ServicesPreview() {
@@ -18,7 +19,9 @@ export function ServicesPreview() {
         description="Every professional we match brings focused, real-world experience — not general help, but genuine capability in the work you need done."
       />
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
+      <ToolsMarquee />
+
+      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
         {featured.map((service, i) => (
           <Reveal key={service.slug} delay={i * 60}>
             <ServiceCard service={service} />

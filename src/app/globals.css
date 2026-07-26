@@ -219,6 +219,61 @@
   }
 }
 
+/*
+  Tools marquee — see components/sections/ToolsMarquee.tsx
+
+  The track holds two identical copies of the tool list, so translating it by
+  exactly -50% advances one full copy and the loop repeats with no visible jump.
+*/
+@keyframes tools-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@layer utilities {
+  .animate-tools-marquee {
+    animation: tools-marquee var(--tools-marquee-duration, 40s) linear infinite;
+    /* Hint the compositor without leaving a permanent layer behind. */
+    will-change: transform;
+  }
+}
+
+/* Pause on hover (desktop pointers only — hover on touch is unreliable). */
+@media (hover: hover) and (pointer: fine) {
+  .tools-marquee:hover .animate-tools-marquee {
+    animation-play-state: paused;
+  }
+}
+
+/* Swipeable on touch, but never show a scrollbar. */
+.tools-marquee-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.tools-marquee-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+  Reduced motion: stop the ribbon entirely and let people scroll it by hand.
+  The global rule below collapses animation-duration to 0.001ms, which would
+  otherwise snap the track to its end position and look broken — so this
+  overrides it outright.
+*/
+@media (prefers-reduced-motion: reduce) {
+  .animate-tools-marquee {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
