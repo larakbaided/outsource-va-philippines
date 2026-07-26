@@ -1,3 +1,4 @@
+import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 import { tools, type Tool } from "@/content/tools";
 
@@ -97,17 +98,24 @@ function ToolList({ ariaHidden = false }: { ariaHidden?: boolean }) {
 export function ToolsMarquee({ className }: { className?: string }) {
   return (
     <div className={cn("mt-10", className)}>
-      <h3 className="text-base font-medium">
-        Tools our virtual professionals work with
-      </h3>
-      <p className="mt-1.5 text-sm text-muted-foreground">
-        Experienced across the platforms modern businesses use every day.
-      </p>
+      {/*
+        Heading stays inside the content container so it lines up with the
+        section copy above it; the ribbon below is deliberately full-bleed.
+      */}
+      <Container>
+        <h3 className="text-base font-medium">
+          Tools our virtual professionals work with
+        </h3>
+        <p className="mt-1.5 text-sm text-muted-foreground">
+          Experienced across the platforms modern businesses use every day.
+        </p>
+      </Container>
 
       {/*
-        `overflow-hidden` here is what stops the duplicated track from causing
-        horizontal page overflow — the track is intentionally ~2x wider than
-        the viewport.
+        Full viewport width — this element is rendered outside any Container
+        (see ServicesPreview). `overflow-hidden` is what stops the duplicated
+        track from causing horizontal page overflow, since the track is
+        intentionally ~2x wider than the viewport.
       */}
       <div className="tools-marquee group relative mt-5 overflow-hidden">
         {/* Soft edge fades. Sized in rem so they scale with the layout. */}

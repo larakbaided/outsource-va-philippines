@@ -236,7 +236,8 @@
 
 @layer utilities {
   .animate-tools-marquee {
-    animation: tools-marquee var(--tools-marquee-duration, 40s) linear infinite;
+    /* Loop duration. Lower = faster; this is the only value to change. */
+    animation: tools-marquee var(--tools-marquee-duration, 35s) linear infinite;
     /* Hint the compositor without leaving a permanent layer behind. */
     will-change: transform;
   }
