@@ -10,10 +10,18 @@ import { cn } from "@/lib/utils";
  * TO USE REAL PHOTOS: add the .webp to /public/team/ and set
  * imageIsPlaceholder: false for that member in src/content/team.ts.
  */
+/**
+ * The team photos are 4:3 landscape but every frame on the site is portrait
+ * (aspect-[4/5]). `object-cover` therefore scales to match height and throws
+ * the extra width away, so the browser needs roughly 1.67x more source width
+ * than the frame is wide (4/3 ÷ 4/5). `sizes` has to describe that, which is
+ * why the values below exceed the layout width — without it the browser picks
+ * a candidate that then gets upscaled, and the photo looks soft.
+ */
 export function TalentAvatar({
   member,
   className,
-  sizes = "(max-width: 640px) 95vw, (max-width: 1024px) 47vw, 420px",
+  sizes = "(max-width: 640px) 158vw, (max-width: 1024px) 78vw, 700px",
   priority = false,
 }: {
   member: TeamMember;
@@ -32,6 +40,7 @@ export function TalentAvatar({
           fill
           sizes={sizes}
           priority={priority}
+          quality={90}
           className="object-cover"
         />
       </div>
