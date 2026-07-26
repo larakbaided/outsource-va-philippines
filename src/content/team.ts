@@ -293,7 +293,7 @@ export const team: TeamMember[] = [
     services: ["Systems & Operations"],
     industries: ["Marketing Agencies", "Service Businesses", "E-commerce"],
     image: "/team/vince-profile.webp",
-    imageIsPlaceholder: true,
+    imageIsPlaceholder: false,
     avatarGradient: "from-[#1f3a2e] to-[#2f5f7a]",
   },
   {
@@ -336,7 +336,7 @@ export const team: TeamMember[] = [
     services: ["Social Media Management", "Digital Marketing Support"],
     industries: ["Personal Brands", "E-commerce", "Coaches & Consultants"],
     image: "/team/jodie-profile.webp",
-    imageIsPlaceholder: true,
+    imageIsPlaceholder: false,
     avatarGradient: "from-[#b08b4f] to-[#1f3a2e]",
   },
 ];
