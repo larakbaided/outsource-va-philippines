@@ -12,6 +12,7 @@ export type NavItem = {
 export const mainNav: NavItem[] = [
   { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Our Talent", href: "/our-talent" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "About", href: "/about" },
@@ -52,6 +53,7 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
   {
     title: "Get Started",
     items: [
+      { label: "Pricing", href: "/pricing" },
       { label: "Book a Consultation", href: "/book" },
       { label: "Send an Inquiry", href: "/contact#inquiry" },
       { label: "Privacy Policy", href: "/privacy-policy" },

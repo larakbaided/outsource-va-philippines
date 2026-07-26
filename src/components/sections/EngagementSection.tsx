@@ -1,8 +1,8 @@
+import Link from "next/link";
 import { Check } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ConsultationButton } from "@/components/ConsultationButton";
 import { engagementOptions, engagementNote } from "@/content/engagement";
 
@@ -24,12 +24,8 @@ export function EngagementSection({
           <Reveal key={option.slug} delay={i * 70} className="h-full">
             <Card className="flex h-full flex-col p-6 sm:p-7">
               <h3 className="text-xl font-medium">{option.name}</h3>
-              {option.price ? (
+              {option.price && (
                 <p className="mt-1 text-accent-strong">{option.price}</p>
-              ) : (
-                <Badge variant="outline" size="sm" className="mt-2 w-fit">
-                  Pricing discussed on consultation
-                </Badge>
               )}
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {option.description}
@@ -58,7 +54,16 @@ export function EngagementSection({
         ))}
       </div>
 
-      <p className="mt-6 text-sm text-muted-foreground">{engagementNote}</p>
+      <p className="mt-6 text-sm text-muted-foreground">
+        {engagementNote}{" "}
+        <Link
+          href="/pricing"
+          className="font-medium text-accent-strong hover:text-accent"
+        >
+          See the full rate card
+        </Link>
+        .
+      </p>
     </Section>
   );
 }

@@ -1,7 +1,19 @@
 /**
  * Frequently asked questions. Wording is intentionally careful — no promised
  * timelines or guarantees. Edit here; these also feed FAQ schema markup.
+ *
+ * Any answer quoting a rate or payment term must read it from
+ * @/content/pricing (the single source), never hardcode the number.
  */
+
+import {
+  activationFee,
+  lowestFullTimeUsd,
+  lowestMonthlyUsd,
+  monthHours,
+  projectFloorUsd,
+  usd,
+} from "@/content/pricing";
 
 export type Faq = {
   question: string;
@@ -21,8 +33,11 @@ export const faqs: Faq[] = [
   },
   {
     question: "How much does a Filipino virtual assistant cost?",
-    answer:
-      "Cost depends on the role, scope, experience level, and hours involved, so we don't publish fixed rates that could be misleading. Hiring a skilled virtual assistant from the Philippines is generally more cost-effective than hiring locally in the US. We share clear, specific pricing during your consultation once we understand what you need.",
+    answer: `Cost depends on specialization, experience, hours and engagement type. Our rates are published: part-time months start at ${usd(lowestMonthlyUsd)} and full-time at ${usd(lowestFullTimeUsd)}. Scoped projects are quoted per outcome, from ${usd(projectFloorUsd)}. The full card is on our pricing page.`,
+  },
+  {
+    question: "How does payment work?",
+    answer: `${activationFee.terms} ${activationFee.refundCondition} After that you pay your first month in advance once you've chosen your professional, then monthly in advance by card or ACH. Either side can end an engagement with 30 days' written notice, with no exit fee.`,
   },
   {
     question: "Why hire a virtual assistant from the Philippines?",
@@ -41,8 +56,7 @@ export const faqs: Faq[] = [
   },
   {
     question: "Do you provide part-time and full-time support?",
-    answer:
-      "We offer project-based, part-time, and full-time arrangements. The right option depends on your role scope, schedule, and priorities — something we'll discuss together during your consultation.",
+    answer: `Yes. A part-time month is ${monthHours.partTime} hours. A full-time month is ${monthHours.fullTime} hours, in your working hours. We also take scoped projects, quoted per outcome. Rates for all three are on our pricing page.`,
   },
   {
     question: "Can your team work in my time zone?",
@@ -62,7 +76,7 @@ export const faqs: Faq[] = [
   {
     question: "What happens if the selected professional is not the right fit?",
     answer:
-      "If the match isn't working, let us know. We provide agency support throughout the partnership and will help address the situation. Specific arrangements will be discussed during your consultation.",
+      "Tell us. We support the partnership throughout and will help you address it. Replacement support is set out in your services agreement.",
   },
   {
     question: "Do you offer project-based services?",
