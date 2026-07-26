@@ -88,9 +88,7 @@ export default async function TalentProfilePage({
                 member={member}
                 priority
                 className="aspect-[4/5] w-full rounded-2xl shadow-[var(--shadow-lift)]"
-                // Widths are ~1.67x the frame to cover the 4:3 -> 4:5 crop.
-                // See the note in TalentAvatar.
-                sizes="(max-width: 1024px) 153vw, 870px"
+                sizes="(max-width: 1024px) 92vw, 520px"
               />
               <Badge variant="sage" className="mt-4">
                 {member.experience}
