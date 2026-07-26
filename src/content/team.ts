@@ -17,7 +17,8 @@ export type Specialty =
   | "GoHighLevel"
   | "Executive Support"
   | "Digital Marketing"
-  | "Social Media";
+  | "Social Media"
+  | "Development";
 
 export type TeamMember = {
   slug: string;
@@ -253,6 +254,90 @@ export const team: TeamMember[] = [
     imageIsPlaceholder: false,
     avatarGradient: "from-[#9a7638] to-[#3d7a55]",
   },
+  {
+    slug: "vince",
+    name: "Vince",
+    // PLACEHOLDER — confirm with Vince. Copy below avoids pronouns entirely.
+    pronouns: "they/them",
+    role: "Full Stack Developer",
+    experience: "3 Years of Experience",
+    specialty: "Development",
+    shortBio:
+      "Vince builds and maintains the web side of a business — websites, landing pages, integrations, and the fixes and improvements that keep them working.",
+    summary:
+      "Vince is a full stack developer with three years of hands-on experience across front-end and back-end work. The focus is practical: building pages and features that work, connecting the tools a business already uses, and fixing what breaks without turning it into a project.",
+    strengths: [
+      "Building and maintaining working web pages and features",
+      "Connecting tools and services through APIs",
+      "Diagnosing and fixing what's broken",
+    ],
+    // PLACEHOLDER — replace with Vince's real stack before publishing.
+    skills: [
+      "Front-End Development",
+      "Back-End Development",
+      "API Integration",
+      "Responsive Layouts",
+      "Website Maintenance",
+      "Debugging",
+      "Version Control",
+      "Performance Fixes",
+    ],
+    // PLACEHOLDER — replace with the tools Vince actually uses.
+    tools: ["Git", "VS Code", "WordPress", "Google Workspace", "Slack"],
+    responsibilities: [
+      "Build and update website pages and features",
+      "Integrate third-party tools and APIs",
+      "Investigate and fix bugs",
+      "Keep sites maintained and up to date",
+    ],
+    services: ["Website Development", "Systems & Operations"],
+    industries: ["Marketing Agencies", "Service Businesses", "E-commerce"],
+    image: "/team/vince-profile.webp",
+    imageIsPlaceholder: false,
+    avatarGradient: "from-[#1f3a2e] to-[#2f5f7a]",
+  },
+  {
+    slug: "jodie",
+    name: "Jodie",
+    // PLACEHOLDER — confirm with Jodie. Copy below avoids pronouns entirely.
+    pronouns: "they/them",
+    role: "Content Creator & Video Editor",
+    experience: "3 Years of Experience",
+    specialty: "Social Media",
+    alsoFilters: ["Digital Marketing"],
+    shortBio:
+      "Jodie edits video for brands — short-form vertical content, reels, and cut-downs — alongside the graphics and captions that go out with it.",
+    summary:
+      "Jodie is a content creator with three years of experience, strongest in video editing. The work runs from raw footage to finished short-form content: cutting, captioning, pacing, and adapting one recording into the several versions each platform needs.",
+    strengths: [
+      "Turning raw footage into finished short-form video",
+      "Cutting one recording into several platform versions",
+      "Consistent visual and written brand voice",
+    ],
+    skills: [
+      "Video Editing",
+      "Short-Form Video",
+      "Subtitles & Captions",
+      "Content Repurposing",
+      "Graphic Design",
+      "Caption Writing",
+      "Content Calendars",
+      "Brand Consistency",
+    ],
+    // PLACEHOLDER — confirm which editing suite Jodie actually uses.
+    tools: ["CapCut", "Adobe Premiere Pro", "Canva", "Meta Business Suite", "Google Drive"],
+    responsibilities: [
+      "Edit short-form video for social platforms",
+      "Add subtitles, captions and on-screen text",
+      "Repurpose one recording into multiple formats",
+      "Produce supporting graphics and captions",
+    ],
+    services: ["Social Media Management", "Digital Marketing Support"],
+    industries: ["Personal Brands", "E-commerce", "Coaches & Consultants"],
+    image: "/team/jodie-profile.webp",
+    imageIsPlaceholder: false,
+    avatarGradient: "from-[#b08b4f] to-[#1f3a2e]",
+  },
 ];
 
 export function getTeamMember(slug: string): TeamMember | undefined {
@@ -264,6 +349,7 @@ export const specialties: Specialty[] = [
   "Executive Support",
   "Digital Marketing",
   "Social Media",
+  "Development",
 ];
 
 /** Does a member match a specialty filter (primary or secondary)? */

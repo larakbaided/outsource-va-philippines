@@ -5,6 +5,7 @@ import {
   Share2,
   Folder,
   Layers,
+  Code2,
   type LucideIcon,
 } from "lucide-react";
 import type { Service } from "@/content/services";
@@ -17,6 +18,7 @@ const iconMap: Record<Service["icon"], LucideIcon> = {
   share: Share2,
   folder: Folder,
   layers: Layers,
+  code: Code2,
 };
 
 export function ServiceIcon({

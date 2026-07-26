@@ -14,7 +14,14 @@ export type Service = {
   slug: string;
   /** Keyword-rich URL slug for the dedicated page (/services/{pageSlug}). */
   pageSlug: string;
-  icon: "workflow" | "clipboard" | "megaphone" | "share" | "folder" | "layers";
+  icon:
+    | "workflow"
+    | "clipboard"
+    | "megaphone"
+    | "share"
+    | "folder"
+    | "layers"
+    | "code";
   title: string;
   /** Short label used in nav/preview. */
   shortTitle: string;
@@ -575,6 +582,89 @@ export const services: Service[] = [
       "CRM virtual assistant",
       "CRM setup specialist",
       "automation specialist",
+    ],
+  },
+  {
+    slug: "web-development",
+    pageSlug: "website-developer",
+    icon: "code",
+    title: "Website Developers",
+    shortTitle: "Website Development",
+    tagline: "Someone to build it, and keep it working.",
+    description:
+      "Experienced developers who build and maintain the web side of your business — pages, landing pages, integrations, and the ongoing fixes that keep everything running.",
+    forWho:
+      "Businesses that need website work done properly and then looked after, without hiring an agency for every small change.",
+    keyTasks: [
+      "Website builds & pages",
+      "Landing pages",
+      "Integrations & APIs",
+      "Bug fixes",
+      "Ongoing maintenance",
+    ],
+    responsibilities: [
+      "Build and update website pages",
+      "Build landing pages for campaigns",
+      "Connect third-party tools and APIs",
+      "Fix bugs and broken functionality",
+      "Improve page speed and responsiveness",
+      "Keep plugins, dependencies and platforms updated",
+      "Set up forms and tracking",
+      "Implement design handoffs",
+      "Test across devices and browsers",
+      "Document what was built and why",
+    ],
+    // PLACEHOLDER — confirm Vince's actual stack and replace this list.
+    tools: ["Git", "WordPress", "Google Workspace", "Figma", "Slack"],
+    outcomes: [
+      "A site that works on every device, not just the one it was built on",
+      "Changes handled as they come up, instead of piling into a redesign",
+      "The tools you use talking to each other properly",
+    ],
+    exampleTasks: [
+      "Build a landing page for a campaign launch",
+      "Connect a website form to your CRM so leads arrive automatically",
+      "Fix a checkout or booking flow that stopped working",
+      "Speed up pages that load slowly on mobile",
+    ],
+    relatedTeam: ["vince"],
+    serviceType: "Website Development",
+    metaTitle: "Website Developer",
+    metaDescription:
+      "Hire a website developer from the Philippines to build pages, connect integrations, fix bugs, and maintain your site. Experienced remote development support for US businesses.",
+    h1: "Website Developers for US Businesses",
+    intro:
+      "A website developer handles the build-and-maintain work that sits behind your site — pages and landing pages, integrations with the tools you already use, and the fixes that come up along the way. Our developers support US businesses remotely, so small changes get handled instead of waiting for a redesign.",
+    problems: [
+      "Small website changes sit in a queue for weeks.",
+      "Your site works on desktop but breaks on a phone.",
+      "Forms, tracking, or integrations quietly stopped working.",
+      "An agency quote for a minor fix costs more than the fix.",
+    ],
+    faqs: [
+      {
+        question: "What kind of website work can a developer handle?",
+        answer:
+          "Building and updating pages, landing pages for campaigns, connecting forms and integrations, fixing broken functionality, improving speed and mobile layout, and keeping platforms and plugins up to date.",
+      },
+      {
+        question: "Can a developer maintain a site someone else built?",
+        answer:
+          "Usually, yes. We'd look at what the site is built on first and tell you honestly what can be maintained and what would be better rebuilt.",
+      },
+      {
+        question: "Do you build sites from scratch or only maintain them?",
+        answer:
+          "Both. A new build is normally scoped as a project with a defined outcome and a handover; ongoing maintenance works better as a monthly arrangement.",
+      },
+    ],
+    relatedServices: ["project-operations", "gohighlevel"],
+    keywords: [
+      "website developer Philippines",
+      "hire a website developer",
+      "remote web developer",
+      "website maintenance virtual assistant",
+      "full stack developer Philippines",
     ],
   },
 ];
