@@ -13,7 +13,10 @@ export type AnalyticsEvent =
   | "contact_form_started"
   | "contact_form_submitted"
   | "talent_profile_viewed"
-  | "service_card_clicked";
+  | "service_card_clicked"
+  // Careers subdomain
+  | "application_started"
+  | "application_submitted";
 
 type Props = Record<string, string | number | boolean | undefined>;
 

@@ -21,3 +21,12 @@ export function getSupabaseAdmin(): SupabaseClient | null {
 }
 
 export const CONTACT_TABLE = "contact_submissions";
+
+/** Careers subdomain: job applications and their résumé files. */
+export const APPLICATIONS_TABLE = "job_applications";
+
+/**
+ * PRIVATE storage bucket holding candidate résumés. Never make this public —
+ * read access is via short-lived signed URLs generated server-side.
+ */
+export const RESUME_BUCKET = "applications";
