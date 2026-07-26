@@ -10,6 +10,12 @@ import { cn } from "@/lib/utils";
  * TO USE REAL PHOTOS: add the .webp to /public/team/ and set
  * imageIsPlaceholder: false for that member in src/content/team.ts.
  */
+/**
+ * The team photos are 4:5 portrait, matching every frame they render in, so
+ * `object-cover` crops nothing and `sizes` can describe the layout width
+ * directly. If a photo is ever replaced with a landscape crop, these values
+ * have to grow to compensate or the image will be upscaled and look soft.
+ */
 export function TalentAvatar({
   member,
   className,
@@ -32,6 +38,7 @@ export function TalentAvatar({
           fill
           sizes={sizes}
           priority={priority}
+          quality={90}
           className="object-cover"
         />
       </div>

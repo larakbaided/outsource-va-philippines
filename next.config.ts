@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
   // Prefer modern formats; Next serves AVIF then WebP with automatic fallback.
   images: {
     formats: ["image/avif", "image/webp"],
+    // Next 16 treats this as an allowlist (default [75]). 90 is used for
+    // portrait photography, where 75 visibly softens skin and hair detail.
+    qualities: [75, 90],
   },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
