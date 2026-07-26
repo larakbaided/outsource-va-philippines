@@ -13,7 +13,7 @@ keywords:
   - "social media management for small business"
 ---
 
-Everyone knows social media matters for their brand. Almost no one has the time to do it consistently. That gap — between knowing you *should* post and actually doing it — is exactly where a social media virtual assistant earns their keep.
+Everyone knows social media matters for their brand. Almost no one has the time to do it consistently. That gap — between knowing you *should* post and actually doing it — is exactly where a [social media virtual assistant](/services/social-media-management) earns their keep.
 
 ## The real problem isn't creativity — it's consistency
 
@@ -55,10 +55,10 @@ None of these are dramatic on any single day. Over months, they're what separate
 
 ## Who benefits most
 
-A social media VA is especially valuable for **coaches, consultants, personal brands, local service businesses, and e-commerce** — anyone whose audience lives on social platforms but who can't afford to spend hours a day there themselves.
+A social media VA is especially valuable for **[coaches, consultants](/industries/coaches-consultants), personal brands, local service businesses, and e-commerce** — anyone whose audience lives on social platforms but who can't afford to spend hours a day there themselves.
 
 ## Getting started
 
 The best first step is deciding which platforms matter for your business and what a realistic, sustainable posting rhythm looks like. From there, a social media VA handles the execution so you can stay focused on running your business.
 
-Want help figuring out the right approach for your brand? Book a consultation and we'll map it out together.
+Want help figuring out the right approach for your brand? [Book a consultation](/contact) and we'll map it out together.

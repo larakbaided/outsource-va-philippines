@@ -19,7 +19,7 @@ This guide walks through how to hire a Filipino virtual assistant the right way,
 
 ## Why so many businesses hire virtual assistants from the Philippines
 
-The Philippines has become one of the world's leading destinations for virtual talent, and for good reason:
+The Philippines has become one of the world's leading destinations for virtual talent, and [for good reason](/why-hire-filipino-virtual-assistants):
 
 - **Strong English proficiency** and a culture of clear, professional communication
 - **A large pool of experienced professionals** across administration, marketing, CRM, and social media
@@ -45,7 +45,7 @@ You generally have three options:
 
 1. **Freelance marketplaces** — the largest pool, but you do all the screening, vetting, and risk management yourself.
 2. **Hiring independently** through referrals or job posts — more control, but time-consuming and inconsistent.
-3. **A managed agency** — a partner screens professionals, matches you based on your needs, and supports the relationship over time.
+3. **A managed agency** — a partner screens professionals, matches you based on your needs, and supports the relationship over time (here's [how our matching process works](/how-it-works)).
 
 Each has trade-offs. Marketplaces offer volume; agencies offer vetting and support. The right choice depends on how much time and risk you want to take on yourself.
 
@@ -90,4 +90,4 @@ Rates vary widely based on experience, specialization, and hours. Rather than ch
 
 Hiring a virtual assistant from the Philippines is one of the highest-leverage moves a growing business can make — *when* it's done deliberately. Define the role, vet for experience and communication, set clear expectations, and onboard with care.
 
-If you'd rather not navigate the screening and matching process alone, that's exactly what a managed partner is for.
+If you'd rather not navigate the screening and matching process alone, that's exactly what a managed partner is for — [tell us what you need](/contact) and we'll help you find the right fit.

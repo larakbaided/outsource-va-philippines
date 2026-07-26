@@ -2,9 +2,13 @@ import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 import { absoluteUrl } from "@/lib/utils";
 import { team } from "@/content/team";
+import { services } from "@/content/services";
+import { industryPages } from "@/content/industries";
 import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
+
   const staticRoutes: {
     path: string;
     priority: number;
@@ -12,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }[] = [
     { path: "/", priority: 1, changeFrequency: "weekly" },
     { path: "/services", priority: 0.9, changeFrequency: "monthly" },
+    { path: "/industries", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/why-hire-filipino-virtual-assistants", priority: 0.7, changeFrequency: "monthly" },
     { path: "/our-talent", priority: 0.9, changeFrequency: "monthly" },
     { path: "/how-it-works", priority: 0.8, changeFrequency: "monthly" },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" },
@@ -21,6 +27,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" },
     { path: "/terms", priority: 0.3, changeFrequency: "yearly" },
   ];
+
+  const serviceRoutes = services.map((s) => ({
+    path: `/services/${s.pageSlug}`,
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  }));
+
+  const industryRoutes = industryPages.map((i) => ({
+    path: `/industries/${i.slug}`,
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
+  }));
 
   const talentRoutes = team.map((m) => ({
     path: `/our-talent/${m.slug}`,
@@ -38,9 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticEntries: MetadataRoute.Sitemap = [
     ...staticRoutes,
+    ...serviceRoutes,
+    ...industryRoutes,
     ...talentRoutes,
   ].map((route) => ({
     url: absoluteUrl(route.path, site.url),
+    lastModified: now,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));
