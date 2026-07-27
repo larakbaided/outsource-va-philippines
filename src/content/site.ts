@@ -26,11 +26,22 @@ export const site = {
 
   /** Consultation booking link — used by every "Book a Consultation" CTA. */
   calendlyUrl:
-    process.env.NEXT_PUBLIC_CALENDLY_URL ||
+    process.env.NEXT_PUBLIC_CALENDLY_URL?.trim() ||
     "https://calendly.com/work-larakatrina/30min",
 
-  /** Production URL. PLACEHOLDER — set NEXT_PUBLIC_SITE_URL before launch. */
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.example.com",
+  /**
+   * Production URL. PLACEHOLDER — set NEXT_PUBLIC_SITE_URL before launch.
+   *
+   * Trimmed deliberately. A value pasted into a hosting dashboard with a stray
+   * leading or trailing space is invisible there but corrupts every absolute
+   * URL built from it: sitemap <loc> entries and JSON-LD url/@id become
+   * malformed, which search engines reject. `new URL()` happens to tolerate
+   * the whitespace, so metadataBase and the canonical/og tags look fine and
+   * the fault hides in exactly the places that are hardest to eyeball.
+   */
+  url: (
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.example.com"
+  ).trim(),
 
   /* ----------------------------------------------------------------------
    * EDITABLE BUSINESS PLACEHOLDERS — replace with approved details.
