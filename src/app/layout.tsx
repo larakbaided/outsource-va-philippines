@@ -39,9 +39,18 @@ export const metadata: Metadata = {
   creator: site.name,
   // Static favicon set lives in /public (generated from the brand mark).
   // These emit stable, crawlable <link> tags that Google Search can index.
+  //
+  // For the icon to appear beside us in Google results it must be a square
+  // whose size is a multiple of 48px, so at least one conforming entry has to
+  // be declared here as rel="icon". favicon.ico (48x48) and the 192x192 PNG
+  // both qualify; the 32x32 and 16x16 do not and are kept purely because
+  // browsers render sharper tabs from an exact-size match. The 192 is listed
+  // as an icon rather than left to site.webmanifest alone, because Google
+  // reads the <head> links and not the manifest when picking a search favicon.
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
+      { url: "/android-chrome-192x192.png", type: "image/png", sizes: "192x192" },
       { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
       { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
     ],
