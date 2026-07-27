@@ -20,8 +20,12 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_80%_0%,rgba(176,139,79,0.10),transparent),radial-gradient(50%_40%_at_0%_100%,rgba(143,166,150,0.14),transparent)]"
       />
       <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-24">
-        {/* Copy */}
-        <div className="max-w-xl">
+        {/*
+          Copy. The cap keeps the headline and subheadline at a readable
+          measure; it steps up at lg so the column does not leave a dead gap
+          before the collage now that the page runs to `--container-page`.
+        */}
+        <div className="max-w-xl lg:max-w-2xl">
           <Reveal>
             <Badge variant="accent" size="md" className="mb-5">
               {hero.badge}
@@ -52,23 +56,28 @@ export function Hero() {
            the full height on the left, two stacked images on the right. The
            row spans keep every edge aligned regardless of image dimensions. */}
         <Reveal delay={120} className="relative">
-          <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+          {/*
+            Keep this cap conservative. The grid below is aspect-[4/5], so any
+            width increase costs 1.25x that in height — widening past max-w-lg
+            pushes the hero taller than a laptop viewport.
+          */}
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-lg">
             <div className="grid aspect-[4/5] grid-cols-5 grid-rows-2 gap-3 sm:gap-4">
               <TalentAvatar
                 member={a}
                 priority
                 className="col-span-3 row-span-2 h-full w-full rounded-2xl shadow-[var(--shadow-lift)]"
-                sizes="(max-width: 1024px) 65vw, 680px"
+                sizes="(max-width: 1024px) 65vw, 780px"
               />
               <TalentAvatar
                 member={b}
                 className="col-span-2 row-span-1 h-full w-full rounded-2xl shadow-[var(--shadow-soft)]"
-                sizes="(max-width: 1024px) 45vw, 460px"
+                sizes="(max-width: 1024px) 45vw, 520px"
               />
               <TalentAvatar
                 member={c}
                 className="col-span-2 row-span-1 h-full w-full rounded-2xl shadow-[var(--shadow-soft)]"
-                sizes="(max-width: 1024px) 45vw, 460px"
+                sizes="(max-width: 1024px) 45vw, 520px"
               />
             </div>
 

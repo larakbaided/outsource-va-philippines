@@ -44,7 +44,7 @@ export function Header() {
           : "border-transparent bg-background",
       )}
     >
-      <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-18 max-w-page items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link href="/" aria-label="Outsource VA Philippines — home">
           <Logo />
         </Link>
@@ -101,7 +101,7 @@ export function Header() {
           id="mobile-menu"
         >
           <nav
-            className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-6 sm:px-6"
+            className="mx-auto flex max-w-page flex-col gap-1 px-5 py-6 sm:px-8"
             aria-label="Mobile"
           >
             {mainNav.map((item) => (

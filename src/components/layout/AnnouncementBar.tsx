@@ -22,7 +22,7 @@ export function AnnouncementBar() {
 
   return (
     <div className="relative bg-primary text-primary-foreground">
-      <div className="mx-auto flex max-w-6xl items-center justify-center gap-x-2 gap-y-1 px-10 py-2.5 text-center text-sm sm:px-6">
+      <div className="mx-auto flex max-w-page items-center justify-center gap-x-2 gap-y-1 px-10 py-2.5 text-center text-sm sm:px-8">
         <p className="font-medium">
           {announcement.message}{" "}
           <a

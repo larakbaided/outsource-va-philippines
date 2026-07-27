@@ -90,6 +90,18 @@
 
   --shadow-soft: 0 1px 2px rgba(31, 58, 46, 0.04), 0 8px 24px rgba(31, 58, 46, 0.06);
   --shadow-lift: 0 4px 12px rgba(31, 58, 46, 0.08), 0 18px 40px rgba(31, 58, 46, 0.1);
+
+  /*
+    Single source of truth for page width, exposed as `max-w-page`.
+    96rem (1536px) is the outer box; with the lg gutter of 3rem a side that
+    leaves 1440px of usable content. Anything that spans the full page — the
+    Container, the sticky header, the announcement bar — must use `max-w-page`
+    and the same gutters so their left edges line up exactly.
+
+    This is NOT the reading width. Long-form copy (blog, legal, FAQ) keeps its
+    own narrower `max-w-2xl`/`max-w-3xl` measure nested inside.
+  */
+  --container-page: 96rem;
 }
 
 @layer base {
