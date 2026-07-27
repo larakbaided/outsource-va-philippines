@@ -76,8 +76,16 @@ export const site = {
 
   /** Default social sharing / SEO copy. */
   seo: {
+    /**
+     * Brand name first, on purpose. Google reads the home page <title> as one
+     * of its signals for the site name shown beside our search results, and it
+     * had been using this whole string in place of just "Outsource VA
+     * Philippines". Leading with the brand keeps that signal consistent with
+     * the WebSite JSON-LD name and og:site_name while retaining the keyword
+     * phrase. Keep the brand first if this copy is ever reworded.
+     */
     homeTitle:
-      "Filipino Virtual Assistants for US Businesses | Outsource VA Philippines",
+      "Outsource VA Philippines | Filipino Virtual Assistants for US Businesses",
     homeDescription:
       "Hire experienced Filipino virtual assistants for your US business. Specialists in GoHighLevel, executive support, CRM and marketing automation, social media, and admin — carefully matched and agency-supported.",
     socialTitle: "Reliable Filipino Virtual Assistants for Growing US Businesses",
