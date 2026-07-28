@@ -56,6 +56,12 @@ export type Service = {
   relatedServices: string[];
   /** Target keywords for reference (not injected as meta keywords). */
   keywords: string[];
+  /**
+   * YYYY-MM-DD this page's copy last meaningfully changed. Drives the
+   * sitemap's <lastmod>. Omit unless the content actually changed —
+   * see content/last-modified.ts.
+   */
+  updated?: string;
 };
 
 export const services: Service[] = [

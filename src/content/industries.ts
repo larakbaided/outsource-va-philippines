@@ -34,6 +34,12 @@ export type IndustryPage = {
   relevantServices: string[];
   faqs: { question: string; answer: string }[];
   keywords: string[];
+  /**
+   * YYYY-MM-DD this page's copy last meaningfully changed. Drives the
+   * sitemap's <lastmod>. Omit unless the content actually changed —
+   * see content/last-modified.ts.
+   */
+  updated?: string;
 };
 
 export const industryPages: IndustryPage[] = [

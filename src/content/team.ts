@@ -44,6 +44,12 @@ export type TeamMember = {
   imageIsPlaceholder: boolean;
   /** Tailwind gradient classes for the temporary initials avatar. */
   avatarGradient: string;
+  /**
+   * YYYY-MM-DD this profile's copy last meaningfully changed. Drives the
+   * sitemap's <lastmod>. Omit unless the content actually changed —
+   * see content/last-modified.ts.
+   */
+  updated?: string;
 };
 
 export const team: TeamMember[] = [
