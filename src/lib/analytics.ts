@@ -14,6 +14,7 @@ export type AnalyticsEvent =
   | "contact_form_submitted"
   | "talent_profile_viewed"
   | "service_card_clicked"
+  | "testimonial_video_played"
   // Careers subdomain
   | "application_started"
   | "application_submitted";

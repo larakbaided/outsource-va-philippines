@@ -49,20 +49,29 @@ export function Header() {
           <Logo />
         </Link>
 
-        {/* Desktop navigation */}
-        <nav
-          className="hidden items-center gap-0.5 lg:flex xl:gap-1"
-          aria-label="Primary"
-        >
+        {/*
+          Desktop navigation appears at xl (1280px), not lg (1024px).
+
+          Eight primary items plus the wordmark and the consultation button do
+          not fit in 1024px: "Our Talent" and "How It Works" each wrap onto two
+          lines and the wordmark breaks onto three. This was already true of the
+          previous eight items before Testimonials existed, and swapping Blog
+          out for Testimonials made it marginally worse rather than better —
+          measured both ways, twelve characters against four. Tightening the
+          padding produces a cramped row, not a fix.
+
+          From 1024px to 1279px the menu button is shown instead, which offers
+          the identical navigation with no wrapping. All eight fit comfortably
+          on one row from 1280px up.
+        */}
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
           {mainNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={cn(
-                // Tighter horizontal padding below xl so all eight nav items
-                // stay on one row from 1024px up.
-                "rounded-full px-2 py-2 text-[0.95rem] font-medium transition-colors xl:px-3.5",
+                "rounded-full px-3.5 py-2 text-[0.95rem] font-medium transition-colors",
                 isActive(item.href)
                   ? "text-accent-strong"
                   : "text-foreground/75 hover:text-foreground",
@@ -84,7 +93,7 @@ export function Header() {
 
           <button
             type="button"
-            className="inline-flex size-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-primary/[0.06] lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-full text-foreground transition-colors hover:bg-primary/[0.06] xl:hidden"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
@@ -94,10 +103,10 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile / tablet menu — shown below xl, see the note on the nav above. */}
       {menuOpen && (
         <div
-          className="fixed inset-x-0 bottom-0 top-18 z-40 overflow-y-auto border-t border-border bg-background lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-18 z-40 overflow-y-auto border-t border-border bg-background xl:hidden"
           id="mobile-menu"
         >
           <nav

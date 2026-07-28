@@ -8,15 +8,23 @@ export type NavItem = {
   href: string;
 };
 
-/** Primary header navigation. */
+/**
+ * Primary header navigation.
+ *
+ * Blog is deliberately absent: it is reached from the footer's Company column
+ * and from the homepage's "Latest from the blog" section, so repeating it here
+ * spent one of the few header slots on a link that already had two entry
+ * points. /blog is unaffected — still built, still in the sitemap, still
+ * crawlable.
+ */
 export const mainNav: NavItem[] = [
   { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
   { label: "Pricing", href: "/pricing" },
   { label: "Our Talent", href: "/our-talent" },
+  { label: "Testimonials", href: "/testimonial" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -35,6 +43,7 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
       { label: "How It Works", href: "/how-it-works" },
       { label: "Why Filipino VAs", href: "/why-hire-filipino-virtual-assistants" },
       { label: "Our Talent", href: "/our-talent" },
+      { label: "Client Testimonials", href: "/testimonial" },
       { label: "Industries", href: "/industries" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },

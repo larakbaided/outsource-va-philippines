@@ -43,6 +43,8 @@ export const CONTENT_BASELINE = "2026-07-26";
  * in a content entry. Omit a route to let it use CONTENT_BASELINE.
  */
 export const staticRouteUpdated: Record<string, string> = {
+  // Client testimonials migrated from virtualassistph.co.
+  "/testimonial": "2026-07-28",
   // "/pricing": "2026-08-14",   ← example: bump when the rates actually change
 };
 
