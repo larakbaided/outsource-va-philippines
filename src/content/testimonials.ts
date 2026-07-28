@@ -171,8 +171,9 @@ export const testimonials: Testimonial[] = [
       "Her communication and writing skills are top-notch, and she was a joy to work with.",
     fullQuote:
       "Hi, my name is Paul Xavier from Content Creator.com. Lara Katrina worked with us for six months on a blogging project, and she absolutely excelled. Her communication and writing skills are top-notch, and she was a joy to work with.\n\nI would definitely hire Lara again. She learns quickly and communicates exceptionally well, which was crucial for our project. She also did great graphic design work and effectively used AI tools for writing. Overall, Lara is a fantastic team member, and I highly recommend her.",
-    // Photograph and video removed at the client's request — see MIGRATION
-    // NOTES 5. His written testimonial is unchanged and stays published.
+    // No `videoUrl` — his video was withdrawn. Photograph retained. See
+    // MIGRATION NOTES 5.
+    clientImage: "/testimonials/paul-x.webp",
     categories: ["Content & Creative", "Digital Marketing"],
     sortOrder: 4,
     relatedServices: ["digital-marketing-support"],
@@ -296,7 +297,7 @@ export function testimonialAttribution(t: Testimonial): string {
  *    - Almira B. and Jerry Y. had no company on the source page, so they have
  *      no `company`. Jerry's photograph shows a "Next Level Physio" shirt;
  *      that is NOT evidence of his employer and has not been recorded.
- *    - Paul X. has no photograph and no video — withdrawn, see note 5.
+ *    - Paul X. has no video — withdrawn, see note 5. He does have a photograph.
  *    - Joshua W., Paul X. and Drikus C. never state their own job title, so
  *      they have no `clientRole`.
  *    - No dates, durations, ratings or view counts existed on the source page.
@@ -328,11 +329,17 @@ export function testimonialAttribution(t: Testimonial): string {
  *      and Firefox. As MP4 it now plays everywhere, so his card no longer
  *      depends on the written fallback.
  *
- * 5. Paul X. — media withdrawn (2026-07-28):
- *    His photograph and video were removed at his request. The image file was
- *    deleted from /public/testimonials and his `clientImage`, `videoUrl` and
- *    `videoType` fields are gone. His written testimonial is untouched and
- *    remains published, so his card renders as the quote-led variant.
- *    Do not re-add either asset without his explicit permission.
+ * 5. Paul X. — video withdrawn, photograph retained (2026-07-28):
+ *    His video is not published. `videoUrl` and `videoType` are absent, so his
+ *    card shows the "Written testimonial" treatment, and the file was never
+ *    copied into this repository — the only remaining copy is the original on
+ *    the old site.
+ *
+ *    His photograph and written testimonial are published. Both were briefly
+ *    removed earlier the same day and the photograph was reinstated; it is
+ *    regenerated from the same source and with the same settings as the other
+ *    six, so it is 800x1000 WebP like the rest.
+ *
+ *    Do not publish his video without his explicit permission.
  * =========================================================================
  */
