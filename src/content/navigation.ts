@@ -11,16 +11,25 @@ export type NavItem = {
 /**
  * Primary header navigation.
  *
- * Blog is deliberately absent: it is reached from the footer's Company column
- * and from the homepage's "Latest from the blog" section, so repeating it here
- * spent one of the few header slots on a link that already had two entry
- * points. /blog is unaffected — still built, still in the sitemap, still
- * crawlable.
+ * The header has room for roughly eight items before the row stops fitting, so
+ * what is NOT here is deliberate:
+ *
+ *   - Blog lives in the footer's Company column and in the homepage's "Latest
+ *     from the blog" section.
+ *   - Pricing lives in the footer's Get Started column, alongside the booking
+ *     and inquiry links it belongs with.
+ *
+ * Both routes are unaffected — still built, still in the sitemap, still
+ * crawlable, still linked from elsewhere in the page body.
+ *
+ * Home points at "/". Header.tsx's `isActive` already compares "/" by exact
+ * match rather than prefix, so it highlights only on the homepage instead of
+ * on every page of the site.
  */
 export const mainNav: NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Industries", href: "/industries" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Our Talent", href: "/our-talent" },
   { label: "Testimonials", href: "/testimonial" },
   { label: "How It Works", href: "/how-it-works" },
