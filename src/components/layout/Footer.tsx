@@ -24,7 +24,7 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-surface-muted">
       <Container className="py-14 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
           {/* Brand column */}
           <div className="max-w-sm">
             <Logo />

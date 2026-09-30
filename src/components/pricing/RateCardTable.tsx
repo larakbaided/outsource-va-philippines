@@ -1,63 +1,53 @@
+import { Check } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { monthHours, rateCard, usd } from "@/content/pricing";
+import { ConsultationButton } from "@/components/ConsultationButton";
+import { monthHours, rateCard } from "@/content/pricing";
 
 /**
- * The published rate card. Shared by the /pricing page and the pricing blog
- * post (via the `<!-- rate-card -->` token in Markdown.tsx) so the figures
- * live in one place — @/content/pricing.
+ * Qualitative rate overview. Shared by the /pricing page and the pricing blog
+ * post (via the `<!-- rate-card -->` token in Markdown.tsx).
+ *
+ * Specific dollar figures are intentionally not published here — every role
+ * is available part-time, full-time, or as a scoped project, and the exact
+ * rate is confirmed during a consultation. Role names and hour definitions
+ * still come from @/content/pricing, the single source of truth.
  */
 export function RateCardTable() {
   return (
     <Card className="overflow-hidden">
-      <div className="overflow-x-auto">
-        <table className="w-full min-w-[36rem] border-collapse text-left">
-          <caption className="sr-only">
-            Monthly and hourly rates by role, in US dollars
-          </caption>
-          <thead>
-            <tr className="border-b border-border bg-surface-muted">
-              <th scope="col" className="px-5 py-4 text-sm font-medium sm:px-7">
-                Role
-              </th>
-              <th scope="col" className="px-5 py-4 text-sm font-medium sm:px-7">
-                Part-time
-                <span className="block text-xs font-normal text-muted-foreground">
-                  {monthHours.partTime} hrs / month
-                </span>
-              </th>
-              <th scope="col" className="px-5 py-4 text-sm font-medium sm:px-7">
-                Full-time
-                <span className="block text-xs font-normal text-muted-foreground">
-                  {monthHours.fullTime} hrs / month
-                </span>
-              </th>
-              <th scope="col" className="px-5 py-4 text-sm font-medium sm:px-7">
-                Project
-                <span className="block text-xs font-normal text-muted-foreground">
-                  per hour
-                </span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rateCard.map((row) => (
-              <tr key={row.role} className="border-b border-border last:border-0">
-                <th scope="row" className="px-5 py-4 text-left font-medium sm:px-7">
-                  {row.role}
-                </th>
-                <td className="px-5 py-4 tabular-nums sm:px-7">
-                  {usd(row.partTime)}
-                </td>
-                <td className="px-5 py-4 tabular-nums sm:px-7">
-                  {usd(row.fullTime)}
-                </td>
-                <td className="px-5 py-4 tabular-nums sm:px-7">
-                  {usd(row.projectHourly)}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="grid divide-y divide-border">
+        {rateCard.map((row) => (
+          <div
+            key={row.role}
+            className="flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-7"
+          >
+            <div>
+              <p className="font-medium">{row.role}</p>
+              <ul className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                <li className="inline-flex items-center gap-1.5">
+                  <Check className="size-3.5 shrink-0 text-accent-strong" aria-hidden="true" />
+                  Part-time ({monthHours.partTime} hrs/mo)
+                </li>
+                <li className="inline-flex items-center gap-1.5">
+                  <Check className="size-3.5 shrink-0 text-accent-strong" aria-hidden="true" />
+                  Full-time ({monthHours.fullTime} hrs/mo)
+                </li>
+                <li className="inline-flex items-center gap-1.5">
+                  <Check className="size-3.5 shrink-0 text-accent-strong" aria-hidden="true" />
+                  Scoped project
+                </li>
+              </ul>
+            </div>
+            <ConsultationButton
+              source="rate-card"
+              variant="outline"
+              size="sm"
+              className="shrink-0"
+            >
+              Get a custom quote
+            </ConsultationButton>
+          </div>
+        ))}
       </div>
     </Card>
   );

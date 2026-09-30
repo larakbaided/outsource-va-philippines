@@ -30,6 +30,9 @@ export function ConsultationButton({
         onClick={() => {
           trackEvent("consultation_cta_clicked", { source });
           trackEvent("calendly_opened", { source });
+          // GA4-recommended-style event, fired alongside the two above —
+          // neither existing event is renamed, this is additive.
+          trackEvent("book_consultation", { source });
         }}
       >
         {children}

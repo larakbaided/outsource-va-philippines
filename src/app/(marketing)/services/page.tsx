@@ -20,7 +20,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/services",
   title: "Virtual Assistant Services",
   description:
-    "Filipino virtual assistant services for US businesses — GoHighLevel, GHL onboarding, executive and administrative support, CRM and marketing automation, digital marketing, and social media.",
+    "Filipino virtual assistant services for Australian, US, and international businesses — GoHighLevel, GHL onboarding, executive and administrative support, CRM and marketing automation, digital marketing, and social media.",
 });
 
 export default function ServicesPage() {

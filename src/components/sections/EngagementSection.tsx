@@ -24,9 +24,6 @@ export function EngagementSection({
           <Reveal key={option.slug} delay={i * 70} className="h-full">
             <Card className="flex h-full flex-col p-6 sm:p-7">
               <h3 className="text-xl font-medium">{option.name}</h3>
-              {option.price && (
-                <p className="mt-1 text-accent-strong">{option.price}</p>
-              )}
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {option.description}
               </p>

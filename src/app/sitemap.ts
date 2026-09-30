@@ -29,6 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/industries", priority: 0.8, changeFrequency: "monthly" },
     { path: "/pricing", priority: 0.9, changeFrequency: "monthly" },
     { path: "/why-hire-filipino-virtual-assistants", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/australia", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/united-states", priority: 0.8, changeFrequency: "monthly" },
     { path: "/our-talent", priority: 0.9, changeFrequency: "monthly" },
     { path: "/testimonial", priority: 0.8, changeFrequency: "monthly" },
     { path: "/how-it-works", priority: 0.8, changeFrequency: "monthly" },

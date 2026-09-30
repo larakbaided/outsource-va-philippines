@@ -22,12 +22,20 @@ export const trustIndicators: TrustIndicator[] = [
  * non-technical editor can update the headline and value proposition safely.
  */
 export const hero = {
-  badge: "Filipino Virtual Assistants for US Businesses",
-  headline: "Reliable Filipino virtual assistants for growing US businesses.",
+  badge: "Filipino Virtual Assistants for Australian & US Businesses",
+  headline:
+    "Experienced Filipino virtual assistants for Australian & US businesses.",
   subheadline:
-    "From GoHighLevel and CRM automation to executive, administrative, marketing, and social media support — we match US businesses with experienced Filipino virtual professionals, then support the partnership over time.",
+    "Specialized support for businesses across Australia, the United States, and beyond — from GoHighLevel and CRM automation to marketing, administration, executive support, and business operations.",
   reassurance: "No pressure. Just a 30-minute conversation about your needs.",
 };
+
+/** Markets served, shown as a small strip near the hero. No overuse of flags. */
+export const marketsServed: { flag: string; label: string; href?: string }[] = [
+  { flag: "🇦🇺", label: "Australia", href: "/australia" },
+  { flag: "🇺🇸", label: "United States", href: "/united-states" },
+  { flag: "🌎", label: "Worldwide" },
+];
 
 /** Floating labels around the hero visual. */
 export const heroLabels: string[] = [

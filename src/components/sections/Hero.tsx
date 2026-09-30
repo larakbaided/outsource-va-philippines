@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { ConsultationButton } from "@/components/ConsultationButton";
 import { TalentAvatar } from "@/components/talent/TalentAvatar";
 import { team } from "@/content/team";
-import { hero, heroLabels } from "@/content/home";
+import { hero, heroLabels, marketsServed } from "@/content/home";
 
 export function Hero() {
   // A clean, aligned collage of three founding professionals.
@@ -48,6 +48,32 @@ export function Hero() {
             <p className="mt-4 text-sm text-muted-foreground">
               {hero.reassurance}
             </p>
+
+            {/* Markets served — subtle, text-led, flags used sparingly. */}
+            <ul className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
+              {marketsServed.map((market) => {
+                const content = (
+                  <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                    <span aria-hidden="true">{market.flag}</span>
+                    {market.label}
+                  </span>
+                );
+                return (
+                  <li key={market.label}>
+                    {market.href ? (
+                      <Link
+                        href={market.href}
+                        className="transition-colors hover:text-accent-strong"
+                      >
+                        {content}
+                      </Link>
+                    ) : (
+                      content
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
           </Reveal>
         </div>
 

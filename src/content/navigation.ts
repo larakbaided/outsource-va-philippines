@@ -59,6 +59,13 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
     ],
   },
   {
+    title: "Markets",
+    items: [
+      { label: "For Australian Businesses", href: "/australia" },
+      { label: "For US Businesses", href: "/united-states" },
+    ],
+  },
+  {
     title: "Services",
     items: [
       { label: "GoHighLevel VA", href: "/services/gohighlevel-virtual-assistant" },

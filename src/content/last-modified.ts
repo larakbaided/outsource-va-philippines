@@ -46,6 +46,13 @@ export const staticRouteUpdated: Record<string, string> = {
   // Client testimonials migrated from virtualassistph.co.
   "/testimonial": "2026-07-28",
   // "/pricing": "2026-08-14",   ← example: bump when the rates actually change
+  // New market landing pages, and the site-wide AU+US repositioning pass.
+  "/australia": "2026-09-30",
+  "/united-states": "2026-09-30",
+  "/": "2026-09-30",
+  "/pricing": "2026-09-30",
+  "/services": "2026-09-30",
+  "/industries": "2026-09-30",
 };
 
 /** YYYY-MM-DD → Date at UTC midnight. Falls back to the baseline. */

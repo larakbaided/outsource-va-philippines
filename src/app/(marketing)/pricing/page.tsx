@@ -20,15 +20,13 @@ import {
   notIncludedInRate,
   contractorPosition,
   monthHours,
-  projectFloorUsd,
-  usd,
 } from "@/content/pricing";
 
 export const metadata: Metadata = buildMetadata({
   path: "/pricing",
   title: "Pricing",
   description:
-    "Our published rate card for Filipino virtual assistants — part-time and full-time monthly rates by role, project rates, payment terms, and what is and isn't included.",
+    "How pricing works for Filipino virtual assistants — part-time, full-time, and project rates by role, payment terms, and what is and isn't included. Custom quotes for Australian, US, and international businesses.",
 });
 
 export default function PricingPage() {
@@ -43,7 +41,7 @@ export default function PricingPage() {
       <PageHeader
         eyebrow="Pricing"
         title="What it costs."
-        description="Our rates are published. What you pay depends on the role, the experience it needs, the hours, and how you engage — so here is the card, and here is what moves you along it."
+        description="What you pay depends on the role, the experience it needs, the hours, and how you engage. Every rate is confirmed with a custom quote during your consultation — here is how the card works, and what moves you along it."
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Pricing", href: "/pricing" },
@@ -56,8 +54,8 @@ export default function PricingPage() {
       <Section>
         <SectionHeading
           eyebrow="Rate card"
-          title="Monthly rates by role."
-          description={`A part-time month is ${monthHours.partTime} hours. A full-time month is ${monthHours.fullTime} hours. All figures are US dollars.`}
+          title="Roles, by engagement type."
+          description={`A part-time month is ${monthHours.partTime} hours. A full-time month is ${monthHours.fullTime} hours. Every role is available part-time, full-time, or as a scoped project — the exact rate is confirmed with a custom quote for your business, in AUD, USD, or your local currency.`}
         />
 
         <Reveal className="mt-10">
@@ -72,7 +70,7 @@ export default function PricingPage() {
           >
             GoHighLevel onboarding
           </Link>
-          , automation setup — are quoted per outcome, from {usd(projectFloorUsd)}.
+          , automation setup — are quoted per outcome after a short scoping conversation.
         </p>
       </Section>
 
@@ -107,7 +105,6 @@ export default function PricingPage() {
             <Reveal key={option.slug} delay={i * 70} className="h-full">
               <Card className="flex h-full flex-col p-6 sm:p-7">
                 <h3 className="text-xl font-medium">{option.name}</h3>
-                <p className="mt-1 text-accent-strong">{option.priceLine}</p>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   {option.detail}
                 </p>
@@ -129,7 +126,10 @@ export default function PricingPage() {
             <Badge variant="accent" size="md">
               {activationFee.label}
             </Badge>
-            <p className="mt-4 leading-relaxed">{activationFee.terms}</p>
+            <p className="mt-4 leading-relaxed">
+              A role activation fee, credited in full against your first
+              monthly invoice. It is not an extra cost.
+            </p>
             <p className="mt-3 leading-relaxed text-muted-foreground">
               {activationFee.refundCondition}
             </p>

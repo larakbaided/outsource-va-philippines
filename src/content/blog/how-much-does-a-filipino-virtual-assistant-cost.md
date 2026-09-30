@@ -34,13 +34,13 @@ You'll generally encounter cost quoted in one of four ways:
 - **Full-time** — a dedicated professional working your full schedule. The best effective rate per hour, suited to a steady workload.
 - **Project-based** — a fixed scope for a defined deliverable, such as a [CRM setup or migration](/services/crm-automation). You pay for the outcome, not the hours.
 
-## Our rates
+## How our rates work
 
-Here is what we charge. A part-time month is {{partTimeHours}} hours, a full-time month is {{fullTimeHours}}, and all figures are US dollars per month except the project column.
+A part-time month is {{partTimeHours}} hours, and a full-time month is {{fullTimeHours}}. Every role below is available part-time, full-time, or as a scoped project — we confirm the exact rate with a custom quote once we understand the role, so it can be quoted in AUD, USD, or your local currency rather than one flat number.
 
 <!-- rate-card -->
 
-Scoped projects — CRM builds, GoHighLevel onboarding, automation setup — are quoted per outcome, from {{projectFloor}}.
+Scoped projects — CRM builds, GoHighLevel onboarding, automation setup — are quoted per outcome after a short scoping conversation.
 
 The pattern is the one described above: the more specialized and experienced the professional, the higher the rate. Full terms are on our [pricing page](/pricing).
 
@@ -60,9 +60,9 @@ A freelancer's headline rate can look lower because you're absorbing the hidden 
 
 ## How we approach pricing
 
-We publish our rates because a number you can't see is hard to plan around. What the monthly rate covers is set out in full on our [pricing page](/pricing): sourcing, screening, verification, matching, onboarding through the first 30 days, ongoing support, and contractor administration.
+We're upfront about how rates are structured because a process you can't see is hard to plan around. What the monthly rate covers is set out in full on our [pricing page](/pricing): sourcing, screening, verification, matching, onboarding through the first 30 days, ongoing support, and contractor administration.
 
-There is a {{activationFee}} role activation fee on acceptance, credited in full against your first monthly invoice. It is not an extra cost. If we cannot put at least two candidates in front of you that you are willing to interview within 14 days, the activation fee is refunded in full.
+There is a role activation fee on acceptance, credited in full against your first monthly invoice. It is not an extra cost. If we cannot put at least two candidates in front of you that you are willing to interview within 14 days, the activation fee is refunded in full.
 
 After that, you pay the first month in advance once you've chosen your professional, then monthly in advance. Either side can end an engagement with 30 days' written notice, and there's no exit fee.
 

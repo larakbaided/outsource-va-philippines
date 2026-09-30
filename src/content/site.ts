@@ -18,11 +18,11 @@ export const site = {
   /** Primary brand message. */
   tagline: "The right virtual talent. The support your business deserves.",
   brandMessage:
-    "Experienced Filipino virtual professionals, carefully matched to help your business operate, market, and grow more effectively.",
+    "Experienced Filipino virtual professionals, carefully matched to help Australian, US, and international businesses operate, market, and grow more effectively.",
   description:
-    "Outsource VA Philippines connects international businesses with experienced Filipino virtual professionals in GoHighLevel, digital marketing, executive support, social media, and business operations.",
+    "Outsource VA Philippines connects Australian, US, and international businesses with experienced Filipino virtual professionals in GoHighLevel, digital marketing, executive support, social media, and business operations.",
   footerDescription:
-    "Outsource VA Philippines connects international businesses with experienced Filipino virtual professionals in GoHighLevel, marketing, executive support, social media, and operations.",
+    "Outsource VA Philippines connects Australian, US, and international businesses with experienced Filipino virtual professionals in GoHighLevel, marketing, executive support, social media, and operations.",
 
   /** Consultation booking link — used by every "Book a Consultation" CTA. */
   calendlyUrl:
@@ -85,10 +85,11 @@ export const site = {
      * phrase. Keep the brand first if this copy is ever reworded.
      */
     homeTitle:
-      "Outsource VA Philippines | Filipino Virtual Assistants for US Businesses",
+      "Outsource VA Philippines | Filipino Virtual Assistants for Australian & US Businesses",
     homeDescription:
-      "Hire experienced Filipino virtual assistants for your US business. Specialists in GoHighLevel, executive support, CRM and marketing automation, social media, and admin — carefully matched and agency-supported.",
-    socialTitle: "Reliable Filipino Virtual Assistants for Growing US Businesses",
+      "Hire experienced Filipino virtual assistants for your Australian or US business. Specialists in GoHighLevel, executive support, CRM and marketing automation, social media, and admin — carefully matched and agency-supported.",
+    socialTitle:
+      "Experienced Filipino Virtual Assistants for Australian & US Businesses",
     /**
      * Default social image. Points to the auto-generated OG image
      * (src/app/opengraph-image.tsx). To use a designed image instead, add

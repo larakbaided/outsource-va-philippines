@@ -2,18 +2,12 @@
  * Frequently asked questions. Wording is intentionally careful — no promised
  * timelines or guarantees. Edit here; these also feed FAQ schema markup.
  *
- * Any answer quoting a rate or payment term must read it from
- * @/content/pricing (the single source), never hardcode the number.
+ * Dollar figures are intentionally not quoted here — pricing is discussed as
+ * a custom quote. Any non-dollar payment term must still read from
+ * @/content/pricing (the single source), never hardcode it.
  */
 
-import {
-  activationFee,
-  lowestFullTimeUsd,
-  lowestMonthlyUsd,
-  monthHours,
-  projectFloorUsd,
-  usd,
-} from "@/content/pricing";
+import { activationFee, monthHours } from "@/content/pricing";
 
 export type Faq = {
   question: string;
@@ -27,22 +21,23 @@ export const faqs: Faq[] = [
       "We provide experienced virtual professionals across GoHighLevel and CRM support, executive and administrative assistance, digital marketing, social media management, and project or operations support. During your consultation we identify which type of professional best fits your goals.",
   },
   {
-    question: "Do you work with businesses in the United States?",
+    question: "Do you work with businesses in Australia and the United States?",
     answer:
-      "Yes. Most of the businesses we support are based in the United States. Our Filipino virtual professionals are experienced working remotely with US companies, and we coordinate communication, tools, and working hours around your team.",
+      "Yes. Australia and the United States are our two primary markets, and our Filipino virtual professionals are experienced working remotely with businesses in both. We coordinate communication, tools, and working hours around your team, wherever you're based — including other international markets.",
   },
   {
     question: "How much does a Filipino virtual assistant cost?",
-    answer: `Cost depends on specialization, experience, hours and engagement type. Our rates are published: part-time months start at ${usd(lowestMonthlyUsd)} and full-time at ${usd(lowestFullTimeUsd)}. Scoped projects are quoted per outcome, from ${usd(projectFloorUsd)}. The full card is on our pricing page.`,
+    answer:
+      "Cost depends on specialization, experience, hours, and engagement type — part-time, full-time, or a scoped project. Rather than one flat number, we confirm an exact rate with a custom quote once we understand the role, so it can be quoted accurately in AUD, USD, or your local currency. See how rates are structured on our pricing page.",
   },
   {
     question: "How does payment work?",
-    answer: `${activationFee.terms} ${activationFee.refundCondition} After that you pay your first month in advance once you've chosen your professional, then monthly in advance by card or ACH. Either side can end an engagement with 30 days' written notice, with no exit fee.`,
+    answer: `There's a role activation fee on acceptance, credited in full against your first monthly invoice — it's not an extra cost. ${activationFee.refundCondition} After that you pay your first month in advance once you've chosen your professional, then monthly in advance by card or ACH. Either side can end an engagement with 30 days' written notice, with no exit fee.`,
   },
   {
     question: "Why hire a virtual assistant from the Philippines?",
     answer:
-      "The Philippines has a large, experienced remote-work workforce with strong English proficiency and a professional service culture. For US businesses, that means dependable support, clear communication, and cost efficiency compared with hiring locally — without compromising on skill.",
+      "The Philippines has a large, experienced remote-work workforce with strong English proficiency and a professional service culture. For Australian and US businesses alike, that means dependable support, clear communication, and cost efficiency compared with hiring locally — without compromising on skill.",
   },
   {
     question: "How do you screen your professionals?",

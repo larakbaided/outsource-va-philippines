@@ -37,8 +37,13 @@ export function OrganizationSchema() {
         image: absoluteUrl(site.seo.ogImage, site.url),
         // Truthful country-level origin (no fabricated street address).
         address: { "@type": "PostalAddress", addressCountry: "PH" },
-        // Clients are served remotely in the United States.
-        areaServed: { "@type": "Country", name: "United States" },
+        // Primary markets are Australia and the United States; the agency also
+        // takes on international clients, but only genuinely-served countries
+        // are named here rather than an unverifiable "Worldwide" claim.
+        areaServed: [
+          { "@type": "Country", name: "Australia" },
+          { "@type": "Country", name: "United States" },
+        ],
         founder: { "@type": "Person", name: site.founder.name },
         knowsAbout: [
           "GoHighLevel",
@@ -79,11 +84,14 @@ export function ServiceSchema({
   description,
   path,
   serviceType,
+  /** Defaults to both primary markets; pass a single country on a market-specific page. */
+  areaServed = ["Australia", "United States"],
 }: {
   name: string;
   description: string;
   path: string;
   serviceType?: string;
+  areaServed?: string[];
 }) {
   return (
     <JsonLd
@@ -95,7 +103,7 @@ export function ServiceSchema({
         ...(serviceType ? { serviceType } : {}),
         url: absoluteUrl(path, site.url),
         provider: { "@id": absoluteUrl("/#organization", site.url) },
-        areaServed: { "@type": "Country", name: "United States" },
+        areaServed: areaServed.map((name) => ({ "@type": "Country", name })),
       }}
     />
   );

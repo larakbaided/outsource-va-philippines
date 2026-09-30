@@ -111,10 +111,11 @@ export const services: Service[] = [
     serviceType: "GoHighLevel & CRM Management",
     metaTitle: "GoHighLevel Virtual Assistant",
     metaDescription:
-      "Hire a GoHighLevel virtual assistant from the Philippines to build workflows, pipelines, funnels, and automations. Experienced GHL specialists supporting US agencies and businesses.",
-    h1: "GoHighLevel Virtual Assistants for US Businesses",
+      "Hire a GoHighLevel virtual assistant from the Philippines to build workflows, pipelines, funnels, and automations. Experienced GHL specialists supporting Australian, US, and international agencies and businesses.",
+    h1: "GoHighLevel Virtual Assistants for Australian & US Businesses",
+    updated: "2026-09-30",
     intro:
-      "A GoHighLevel virtual assistant takes the technical weight of your CRM off your plate — building and maintaining the workflows, pipelines, funnels, and automations that run your marketing and client management. Our GHL specialists support US agencies, coaches, and service businesses remotely, so your platform works the way it should.",
+      "A GoHighLevel virtual assistant takes the technical weight of your CRM off your plate — building and maintaining the workflows, pipelines, funnels, and automations that run your marketing and client management. Our GHL specialists support Australian and US agencies, coaches, and service businesses remotely, so your platform works the way it should.",
     problems: [
       "Your GoHighLevel account is set up but underused or disorganized.",
       "Automations break, misfire, or were never finished.",
@@ -192,7 +193,8 @@ export const services: Service[] = [
     metaTitle: "GoHighLevel Onboarding Specialist",
     metaDescription:
       "Hire a GoHighLevel onboarding specialist from the Philippines to set up your account, migrate data, configure snapshots, and train your team. Start on GHL the right way.",
-    h1: "GoHighLevel Onboarding Specialists for US Businesses",
+    h1: "GoHighLevel Onboarding Specialists for Australian & US Businesses",
+    updated: "2026-09-30",
     intro:
       "Getting onto GoHighLevel is where most businesses get stuck. A GoHighLevel onboarding specialist sets up your account the right way — structure, migration, snapshots, integrations, and team training — so you launch with a working platform instead of an empty one.",
     problems: [
@@ -272,10 +274,11 @@ export const services: Service[] = [
     serviceType: "Executive Assistance",
     metaTitle: "Executive Virtual Assistant",
     metaDescription:
-      "Hire an executive virtual assistant from the Philippines to manage your inbox, calendar, communication, and daily operations. Experienced remote EAs for busy US founders and executives.",
-    h1: "Executive Virtual Assistants for US Founders and Executives",
+      "Hire an executive virtual assistant from the Philippines to manage your inbox, calendar, communication, and daily operations. Experienced remote EAs for busy Australian and US founders and executives.",
+    h1: "Executive Virtual Assistants for Australian & US Founders and Executives",
+    updated: "2026-09-30",
     intro:
-      "An executive virtual assistant protects your time. Ours manage inboxes, calendars, meetings, research, and documentation for busy US founders and executives — bringing calm structure to your day so you can focus on the work only you can do.",
+      "An executive virtual assistant protects your time. Ours manage inboxes, calendars, meetings, research, and documentation for busy Australian and US founders and executives — bringing calm structure to your day so you can focus on the work only you can do.",
     problems: [
       "Your inbox and calendar run you, not the other way around.",
       "Follow-ups and details fall through the cracks.",
@@ -345,8 +348,9 @@ export const services: Service[] = [
     serviceType: "Digital Marketing Support",
     metaTitle: "Digital Marketing Virtual Assistant",
     metaDescription:
-      "Hire a digital marketing virtual assistant from the Philippines to plan and execute campaigns, funnels, email, and reporting. Experienced remote marketing support for US businesses.",
-    h1: "Digital Marketing Virtual Assistants for US Businesses",
+      "Hire a digital marketing virtual assistant from the Philippines to plan and execute campaigns, funnels, email, and reporting. Experienced remote marketing support for Australian, US, and international businesses.",
+    h1: "Digital Marketing Virtual Assistants for Australian & US Businesses",
+    updated: "2026-09-30",
     intro:
       "A digital marketing virtual assistant helps you finish the campaigns and systems that keep stalling — funnels, email, launches, and reporting. Ours bring experienced hands to plan, execute, and report on the marketing work your business keeps putting off.",
     problems: [
@@ -418,10 +422,11 @@ export const services: Service[] = [
     serviceType: "Social Media Management",
     metaTitle: "Social Media Virtual Assistant",
     metaDescription:
-      "Hire a social media virtual assistant from the Philippines to plan content, schedule posts, engage your community, and report on results. Consistent, on-brand support for US brands.",
-    h1: "Social Media Virtual Assistants for US Brands",
+      "Hire a social media virtual assistant from the Philippines to plan content, schedule posts, engage your community, and report on results. Consistent, on-brand support for Australian, US, and international brands.",
+    h1: "Social Media Virtual Assistants for Australian & US Brands",
+    updated: "2026-09-30",
     intro:
-      "A social media virtual assistant keeps your presence active and on-brand — planning content, scheduling posts, engaging your community, and reporting on results. Ours help US brands and personal brands show up consistently without doing it all themselves.",
+      "A social media virtual assistant keeps your presence active and on-brand — planning content, scheduling posts, engaging your community, and reporting on results. Ours help Australian and US brands and personal brands show up consistently without doing it all themselves.",
     problems: [
       "Posting is inconsistent and reactive.",
       "You don't have time to engage or reply.",
@@ -489,8 +494,9 @@ export const services: Service[] = [
     serviceType: "Administrative Support",
     metaTitle: "Administrative Virtual Assistant",
     metaDescription:
-      "Hire an administrative virtual assistant from the Philippines for data entry, scheduling, research, and day-to-day organization. Dependable remote admin support for US businesses.",
-    h1: "Administrative Virtual Assistants for US Businesses",
+      "Hire an administrative virtual assistant from the Philippines for data entry, scheduling, research, and day-to-day organization. Dependable remote admin support for Australian, US, and international businesses.",
+    h1: "Administrative Virtual Assistants for Australian & US Businesses",
+    updated: "2026-09-30",
     intro:
       "An administrative virtual assistant handles the recurring details that keep a business running — data entry, organization, scheduling, research, and coordination. Ours bring dependable, organized support so the everyday work gets done without you chasing it.",
     problems: [
@@ -560,10 +566,11 @@ export const services: Service[] = [
     serviceType: "CRM & Automation Setup",
     metaTitle: "CRM & Automation Virtual Assistant",
     metaDescription:
-      "Hire a CRM and marketing automation specialist from the Philippines for focused setup, migration, and integration projects. Organized project execution for US businesses.",
+      "Hire a CRM and marketing automation specialist from the Philippines for focused setup, migration, and integration projects. Organized project execution for Australian, US, and international businesses.",
     h1: "CRM & Marketing Automation Specialists",
+    updated: "2026-09-30",
     intro:
-      "Some work is a project, not a role — a CRM setup, a migration, or an automation build that needs to be done right. Our specialists scope, execute, and document focused CRM and marketing-automation projects for US businesses, with clear ownership from start to finish.",
+      "Some work is a project, not a role — a CRM setup, a migration, or an automation build that needs to be done right. Our specialists scope, execute, and document focused CRM and marketing-automation projects for Australian and US businesses, with clear ownership from start to finish.",
     problems: [
       "A system needs setting up and no one owns it.",
       "You're migrating platforms and dread the data mess.",
@@ -637,10 +644,11 @@ export const services: Service[] = [
     serviceType: "Website Development",
     metaTitle: "Website Developer",
     metaDescription:
-      "Hire a website developer from the Philippines to build pages, connect integrations, fix bugs, and maintain your site. Experienced remote development support for US businesses.",
-    h1: "Website Developers for US Businesses",
+      "Hire a website developer from the Philippines to build pages, connect integrations, fix bugs, and maintain your site. Experienced remote development support for Australian, US, and international businesses.",
+    h1: "Website Developers for Australian & US Businesses",
+    updated: "2026-09-30",
     intro:
-      "A website developer handles the build-and-maintain work that sits behind your site — pages and landing pages, integrations with the tools you already use, and the fixes that come up along the way. Our developers support US businesses remotely, so small changes get handled instead of waiting for a redesign.",
+      "A website developer handles the build-and-maintain work that sits behind your site — pages and landing pages, integrations with the tools you already use, and the fixes that come up along the way. Our developers support Australian and US businesses remotely, so small changes get handled instead of waiting for a redesign.",
     problems: [
       "Small website changes sit in a queue for weeks.",
       "Your site works on desktop but breaks on a phone.",

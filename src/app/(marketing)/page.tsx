@@ -8,6 +8,7 @@ import { WhyWorkWithUs } from "@/components/sections/WhyWorkWithUs";
 import { FeaturedTestimonials } from "@/components/sections/FeaturedTestimonials";
 import { FeaturedTalent } from "@/components/sections/FeaturedTalent";
 import { ProcessSection } from "@/components/sections/ProcessSection";
+import { TimezoneSection } from "@/components/sections/TimezoneSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { EngagementSection } from "@/components/sections/EngagementSection";
 import { FaqSection } from "@/components/sections/FaqSection";
@@ -33,6 +34,7 @@ export default function HomePage() {
       <FeaturedTestimonials />
       <FeaturedTalent />
       <ProcessSection />
+      <TimezoneSection />
       <IndustriesSection tone="muted" />
       <EngagementSection tone="default" />
       <FaqSection />

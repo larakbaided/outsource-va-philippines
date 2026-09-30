@@ -26,17 +26,17 @@ export const careersSeo = {
    * Landing-page title. Deliberately excludes the brand name — the root
    * layout's title template appends "| Outsource VA Philippines" to it.
    */
-  title: "Careers — Remote Roles with US Businesses",
+  title: "Careers — Remote Roles with Australian & US Businesses",
   description:
-    "Work with US businesses as a Filipino virtual professional. Browse open roles in GoHighLevel and CRM, executive support, marketing and admin — remote, matched, and supported.",
-  socialTitle: "Remote roles with US businesses — Outsource VA Philippines",
+    "Work with Australian and US businesses as a Filipino virtual professional. Browse open roles in GoHighLevel and CRM, executive support, marketing and admin — remote, matched, and supported.",
+  socialTitle: "Remote roles with Australian & US businesses — Outsource VA Philippines",
 };
 
 export const careersHero = {
   badge: "Now hiring Filipino virtual professionals",
-  headline: "Remote work with US businesses, without the job-board grind.",
+  headline: "Remote work with Australian & US businesses, without the job-board grind.",
   subheadline:
-    "We match experienced Filipino professionals with US companies that need them, then support the placement over time. You get a real role with one business, not a queue of one-off gigs.",
+    "We match experienced Filipino professionals with Australian and US companies that need them, then support the placement over time. You get a real role with one business, not a queue of one-off gigs.",
   reassurance: "No placement fees. We're paid by the client, never by you.",
 };
 

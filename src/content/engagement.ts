@@ -1,9 +1,11 @@
 /**
- * Engagement / service-model options. Every price shown here is read from
+ * Engagement / service-model options. Hour figures are read from
  * @/content/pricing (the single source) — never hardcode a rate in this file.
+ * Dollar figures are intentionally not shown here; every engagement is
+ * confirmed with a custom quote during a consultation.
  */
 
-import { engagementTerms, monthHours } from "@/content/pricing";
+import { monthHours } from "@/content/pricing";
 
 export type EngagementOption = {
   slug: string;
@@ -11,19 +13,12 @@ export type EngagementOption = {
   description: string;
   bestFor: string;
   highlights: string[];
-  /** Short price line, read from @/content/pricing. */
-  price?: string;
 };
-
-/** Look up the published price line for an engagement slug. */
-const priceFor = (slug: string) =>
-  engagementTerms.find((t) => t.slug === slug)?.priceLine;
 
 export const engagementOptions: EngagementOption[] = [
   {
     slug: "part-time",
     name: "Part-Time Support",
-    price: priceFor("part-time"),
     description:
       "For businesses that need consistent support for selected responsibilities.",
     bestFor: "Owners who need reliable, ongoing help a few hours a day or week.",
@@ -36,7 +31,6 @@ export const engagementOptions: EngagementOption[] = [
   {
     slug: "full-time",
     name: "Full-Time Support",
-    price: priceFor("full-time"),
     description:
       "For businesses ready to add a dedicated professional to their team.",
     bestFor: "Teams ready for a dedicated, deeply embedded contractor.",
@@ -49,7 +43,6 @@ export const engagementOptions: EngagementOption[] = [
   {
     slug: "project",
     name: "Specialized Project Support",
-    price: priceFor("project"),
     description:
       "For focused technical, marketing, CRM, automation, or setup projects.",
     bestFor: "A specific build, migration, or launch with a clear scope.",
@@ -63,4 +56,4 @@ export const engagementOptions: EngagementOption[] = [
 
 /** Shown near the engagement cards. */
 export const engagementNote =
-  "Which rate applies depends on specialization, experience, hours, and engagement type.";
+  "Rates depend on specialization, experience, hours, and engagement type — book a consultation for a custom quote.";

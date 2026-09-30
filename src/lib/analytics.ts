@@ -15,6 +15,11 @@ export type AnalyticsEvent =
   | "talent_profile_viewed"
   | "service_card_clicked"
   | "testimonial_video_played"
+  // GA4-recommended events, fired alongside the existing ones above (never
+  // instead of them) so lead/booking volume can be measured with GA4's
+  // standard reporting as well as the site's own event names.
+  | "generate_lead"
+  | "book_consultation"
   // Careers subdomain
   | "application_started"
   | "application_submitted";

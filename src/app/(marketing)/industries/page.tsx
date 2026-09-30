@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/industries",
   title: "Industries We Serve",
   description:
-    "Filipino virtual assistants for US real estate, coaches and consultants, marketing agencies, healthcare and wellness businesses, and more. Remote support matched to your industry.",
+    "Filipino virtual assistants for real estate, coaches and consultants, marketing agencies, healthcare and wellness businesses, and more — supporting Australian, US, and international clients. Remote support matched to your industry.",
 });
 
 export default function IndustriesPage() {
@@ -34,7 +34,7 @@ export default function IndustriesPage() {
       <PageHeader
         eyebrow="Who we support"
         title="Virtual assistants matched to your industry."
-        description="We support a wide range of growing US businesses. These are a few of the industries where our virtual professionals do their best work."
+        description="We support a wide range of growing Australian, US, and international businesses. These are a few of the industries where our virtual professionals do their best work."
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Industries", href: "/industries" },

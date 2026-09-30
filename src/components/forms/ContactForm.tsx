@@ -170,6 +170,12 @@ export function ContactForm() {
         source: meta.sourcePage,
         service: values.serviceNeeded,
       });
+      // GA4-recommended conversion event, fired alongside the event above —
+      // contact_form_submitted is not renamed, this is additive.
+      trackEvent("generate_lead", {
+        source: meta.sourcePage,
+        service: values.serviceNeeded,
+      });
       setSubmitted(true);
       reset(contactFormDefaults);
     } catch {
