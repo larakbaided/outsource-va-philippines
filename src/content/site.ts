@@ -27,7 +27,7 @@ export const site = {
   /** Consultation booking link — used by every "Book a Consultation" CTA. */
   calendlyUrl:
     process.env.NEXT_PUBLIC_CALENDLY_URL?.trim() ||
-    "https://calendly.com/work-larakatrina/30min",
+    "https://calendly.com/contact-outsourcevaphilippines/30min",
 
   /**
    * Production URL. PLACEHOLDER — set NEXT_PUBLIC_SITE_URL before launch.
