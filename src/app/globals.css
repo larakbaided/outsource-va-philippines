@@ -257,6 +257,44 @@
 }
 
 /*
+  Tools ribbon — see components/sections/ToolsRibbon.tsx
+
+  Each tool chip rides the same S-curved path (an SVG path string, not a
+  straight line) via CSS motion-path, animating `offset-distance` from 0%
+  to 100% on a loop. Chips are spread along the curve with staggered
+  negative animation-delays, the same trick the straight marquee uses with
+  duplicated lists — here there is only one list, so the spacing comes from
+  timing instead of DOM duplication.
+*/
+.tools-ribbon-path {
+  offset-path: path("M 50 10 C 50 90, 270 90, 270 170 C 270 250, 50 250, 50 330");
+  offset-rotate: 0deg;
+}
+
+@keyframes ribbon-flow {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@layer utilities {
+  .animate-ribbon {
+    animation: ribbon-flow var(--ribbon-duration, 12s) linear infinite;
+    animation-delay: var(--ribbon-delay, 0s);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ribbon {
+    animation: none !important;
+    offset-distance: 50% !important;
+  }
+}
+
+/*
   Tools marquee — see components/sections/ToolsMarquee.tsx
 
   The track holds two identical copies of the tool list, so translating it by
