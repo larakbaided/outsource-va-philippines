@@ -2,9 +2,19 @@
  * =========================================================================
  * CONTACT FORM CONFIGURATION
  * -------------------------------------------------------------------------
- * Dropdown options for the contact form.
+ * Dropdown options for the contact form. Budget brackets are derived from the
+ * published rate card in @/content/pricing so they can never drift from it —
+ * do not write a figure into this file by hand.
  * =========================================================================
  */
+
+import {
+  highestFullTimeUsd,
+  lowestFullTimeUsd,
+  lowestMonthlyUsd,
+  projectFloorUsd,
+  usd,
+} from "@/content/pricing";
 
 export const serviceOptions = [
   "GoHighLevel and CRM Support",
@@ -32,13 +42,14 @@ export const teamSizeOptions = [
   "50+",
 ] as const;
 
-/** Qualitative budget bands — no dollar figures, so no currency assumption. */
+/** Budget brackets. Every boundary is a real figure from the rate card. */
 export const budgetOptions = [
   "Not sure yet",
-  "Just exploring options",
-  "Have a monthly budget in mind",
-  "Have a project budget in mind",
-  "Ready to move forward",
+  `Under ${usd(lowestMonthlyUsd)} / month`,
+  `${usd(lowestMonthlyUsd)} – ${usd(lowestFullTimeUsd)} / month`,
+  `${usd(lowestFullTimeUsd)} – ${usd(highestFullTimeUsd)} / month`,
+  `Over ${usd(highestFullTimeUsd)} / month`,
+  `Scoped project (from ${usd(projectFloorUsd)})`,
 ] as const;
 
 export const referralOptions = [

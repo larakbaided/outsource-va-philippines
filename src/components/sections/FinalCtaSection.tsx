@@ -8,12 +8,9 @@ import { finalCta } from "@/content/home";
 export function FinalCtaSection({
   heading = finalCta.heading,
   description = finalCta.description,
-  source = "final-cta",
 }: {
   heading?: string;
   description?: string;
-  /** Analytics attribution — override per page to segment CTA performance. */
-  source?: string;
 }) {
   return (
     <section className="bg-primary text-primary-foreground">
@@ -24,7 +21,7 @@ export function FinalCtaSection({
             {description}
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <ConsultationButton source={source} size="lg">
+            <ConsultationButton source="final-cta" size="lg">
               Book Your Free Consultation
             </ConsultationButton>
             <Button
