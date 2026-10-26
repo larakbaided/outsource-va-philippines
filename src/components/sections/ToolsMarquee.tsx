@@ -19,9 +19,8 @@ import { tools, type Tool } from "@/content/tools";
  * reduced-motion users can scroll manually.
  */
 
-/** Brand mark, or a neutral monogram when no licensed logo exists.
-    Exported for reuse by ToolsRibbon's S-path display. */
-export function ToolLogo({ tool }: { tool: Tool }) {
+/** Brand mark, or a neutral monogram when no licensed logo exists. */
+function ToolLogo({ tool }: { tool: Tool }) {
   // Decorative: the tool name sits beside it as real text, so announcing the
   // mark too would just repeat it.
   if (tool.logoSrc) {
