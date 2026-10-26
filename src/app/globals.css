@@ -14,17 +14,17 @@
 
 :root {
   /* Core surfaces */
-  --background: #fbf9f4; /* warm ivory */
+  --background: #ffffff; /* clean white */
   --surface: #ffffff; /* white cards */
-  --surface-muted: #f4f1e9; /* soft sand for alternating sections */
+  --surface-muted: #f6f7fa; /* very light cool gray for alternating sections */
 
   /* Text */
-  --foreground: #1f3a2e; /* deep forest green — primary text */
-  --muted-foreground: #5c6b63; /* muted sage-grey for secondary text */
+  --foreground: #0b0e14; /* near-black — primary text */
+  --muted-foreground: #646a76; /* neutral gray for secondary text */
 
-  /* Brand accent */
-  --accent: #b08b4f; /* muted gold */
-  --accent-strong: #9a7638;
+  /* Brand accent — confident blue (replaces the former muted gold) */
+  --accent: #2f6fed;
+  --accent-strong: #1e54c9;
   --accent-foreground: #ffffff;
 
   /* Secondary accent */
@@ -32,26 +32,27 @@
   --sage-soft: #e4ece6;
   --terracotta: #c07a5b;
 
-  /* Primary action (deep forest) */
-  --primary: #1f3a2e;
-  --primary-hover: #16291f;
-  --primary-foreground: #f7f4ea;
+  /* Primary action — same confident blue, solid pill CTAs */
+  --primary: #2f6fed;
+  --primary-hover: #1e54c9;
+  --primary-foreground: #ffffff;
 
   /* Lines & focus */
-  --border: #e7e1d3; /* thin warm border */
-  --input: #d9d2c2;
-  --ring: #b08b4f;
+  --border: #e6e8ec; /* thin cool-gray border */
+  --input: #dadde3;
+  --ring: #2f6fed;
 
   /* Feedback */
-  --destructive: #b3492f;
-  --success: #3d7a55;
+  --destructive: #c0392b;
+  --success: #1f9d6c;
 
   /* Shape */
-  --radius: 0.75rem;
+  --radius: 1rem;
 
-  /* Fonts (wired to next/font in layout.tsx) */
-  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  /* Fonts (wired to next/font in layout.tsx). A single clean grotesk for
+     both headings and body, in the minimal single-typeface SaaS style. */
+  --font-serif: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
 @theme inline {
@@ -88,8 +89,8 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 10px);
 
-  --shadow-soft: 0 1px 2px rgba(31, 58, 46, 0.04), 0 8px 24px rgba(31, 58, 46, 0.06);
-  --shadow-lift: 0 4px 12px rgba(31, 58, 46, 0.08), 0 18px 40px rgba(31, 58, 46, 0.1);
+  --shadow-soft: 0 1px 2px rgba(11, 14, 20, 0.04), 0 8px 24px rgba(11, 14, 20, 0.06);
+  --shadow-lift: 0 4px 16px rgba(11, 14, 20, 0.08), 0 20px 40px rgba(11, 14, 20, 0.1);
 
   /*
     Single source of truth for page width, exposed as `max-w-page`.
@@ -125,9 +126,9 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
     text-wrap: balance;
   }
 

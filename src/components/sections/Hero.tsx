@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -6,91 +7,67 @@ import { Reveal } from "@/components/ui/reveal";
 import { ConsultationButton } from "@/components/ConsultationButton";
 import { TalentAvatar } from "@/components/talent/TalentAvatar";
 import { team } from "@/content/team";
-import { hero, heroLabels } from "@/content/home";
+import { hero, heroLabels, trustIndicators } from "@/content/home";
 
 export function Hero() {
-  // A clean, aligned collage of three founding professionals.
-  const [a, b, c] = team;
+  const stack = team.slice(0, 4);
 
   return (
     <section className="relative overflow-hidden">
-      {/* Soft background wash */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_80%_0%,rgba(176,139,79,0.10),transparent),radial-gradient(50%_40%_at_0%_100%,rgba(143,166,150,0.14),transparent)]"
-      />
-      <Container className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-24">
-        {/*
-          Copy. The cap keeps the headline and subheadline at a readable
-          measure; it steps up at lg so the column does not leave a dead gap
-          before the collage now that the page runs to `--container-page`.
-        */}
-        <div className="max-w-xl lg:max-w-2xl">
-          <Reveal>
-            <Badge variant="accent" size="md" className="mb-5">
-              {hero.badge}
-            </Badge>
-            <h1 className="text-4xl leading-[1.08] sm:text-5xl lg:text-[3.4rem]">
-              {hero.headline}
-            </h1>
-            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              {hero.subheadline}
-            </p>
-          </Reveal>
+      <Container className="relative py-20 sm:py-24 lg:py-28">
+        {/* Floating notification cards — hidden below lg, where they'd
+            collide with the centered copy. */}
+        <NotificationCard className="left-0 top-4 hidden lg:block">
+          {heroLabels[0]}
+        </NotificationCard>
+        <NotificationCard className="right-0 top-16 hidden lg:block">
+          {heroLabels[1]}
+        </NotificationCard>
+        <NotificationCard className="bottom-6 left-6 hidden lg:block">
+          {heroLabels[2]}
+        </NotificationCard>
+        <NotificationCard className="bottom-16 right-4 hidden lg:block">
+          {trustIndicators[0].label}
+        </NotificationCard>
 
-          <Reveal delay={80}>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ConsultationButton source="hero" size="lg" />
-              <Button asChild variant="outline" size="lg">
-                <Link href="/our-talent">Meet Our Talent</Link>
-              </Button>
-            </div>
-            <p className="mt-4 text-sm text-muted-foreground">
-              {hero.reassurance}
-            </p>
-          </Reveal>
-        </div>
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <Badge variant="accent" size="md" className="mb-6">
+            {hero.badge}
+          </Badge>
+          <h1 className="text-5xl leading-[1.02] sm:text-6xl lg:text-7xl">
+            {hero.headline}
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            {hero.subheadline}
+          </p>
+        </Reveal>
 
-        {/* Visual composition — 3-image collage.
-           A CSS grid with a fixed aspect ratio: one large portrait spanning
-           the full height on the left, two stacked images on the right. The
-           row spans keep every edge aligned regardless of image dimensions. */}
-        <Reveal delay={120} className="relative">
-          {/*
-            Keep this cap conservative. The grid below is aspect-[4/5], so any
-            width increase costs 1.25x that in height — widening past max-w-lg
-            pushes the hero taller than a laptop viewport.
-          */}
-          <div className="relative mx-auto w-full max-w-sm lg:max-w-lg">
-            <div className="grid aspect-[4/5] grid-cols-5 grid-rows-2 gap-3 sm:gap-4">
-              <TalentAvatar
-                member={a}
-                priority
-                className="col-span-3 row-span-2 h-full w-full rounded-2xl shadow-[var(--shadow-lift)]"
-                sizes="(max-width: 1024px) 65vw, 780px"
-              />
-              <TalentAvatar
-                member={b}
-                className="col-span-2 row-span-1 h-full w-full rounded-2xl shadow-[var(--shadow-soft)]"
-                sizes="(max-width: 1024px) 45vw, 520px"
-              />
-              <TalentAvatar
-                member={c}
-                className="col-span-2 row-span-1 h-full w-full rounded-2xl shadow-[var(--shadow-soft)]"
-                sizes="(max-width: 1024px) 45vw, 520px"
-              />
-            </div>
+        <Reveal delay={80} className="mt-9 flex flex-col items-center">
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <ConsultationButton source="hero" size="lg" />
+            <Button asChild variant="outline" size="lg">
+              <Link href="/our-talent">Meet Our Talent</Link>
+            </Button>
+          </div>
+          <p className="mt-4 text-sm text-muted-foreground">
+            {hero.reassurance}
+          </p>
 
-            {/* Floating skill labels */}
-            <FloatingLabel className="-left-3 top-10 sm:-left-6">
-              {heroLabels[0]}
-            </FloatingLabel>
-            <FloatingLabel className="-right-3 top-1/2 -translate-y-1/2 sm:-right-6">
-              {heroLabels[1]}
-            </FloatingLabel>
-            <FloatingLabel className="-left-2 bottom-10 sm:-left-5">
-              {heroLabels[2]}
-            </FloatingLabel>
+          <div className="mt-8 flex items-center gap-3">
+            <span className="flex -space-x-3">
+              {stack.map((member) => (
+                <TalentAvatar
+                  key={member.slug}
+                  member={member}
+                  className="size-9 rounded-full ring-2 ring-surface"
+                  sizes="40px"
+                />
+              ))}
+            </span>
+            <span className="flex items-center gap-1.5 text-sm font-medium text-foreground/80">
+              <CheckCircle2 className="size-4 text-accent-strong" />
+              {trustIndicators[1].label}
+            </span>
           </div>
         </Reveal>
       </Container>
@@ -98,7 +75,7 @@ export function Hero() {
   );
 }
 
-function FloatingLabel({
+function NotificationCard({
   children,
   className,
 }: {
@@ -107,8 +84,9 @@ function FloatingLabel({
 }) {
   return (
     <span
-      className={`absolute z-10 rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-medium text-foreground/80 shadow-[var(--shadow-soft)] ${className ?? ""}`}
+      className={`absolute z-10 inline-flex items-center gap-2 rounded-2xl border border-border bg-surface px-3.5 py-2.5 text-xs font-semibold text-foreground shadow-[var(--shadow-lift)] ${className ?? ""}`}
     >
+      <span className="inline-block size-2 rounded-full bg-accent" />
       {children}
     </span>
   );
