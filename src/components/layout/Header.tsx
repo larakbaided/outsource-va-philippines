@@ -36,15 +36,13 @@ export function Header() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-40 border-b transition-colors duration-300",
-        scrolled
-          ? "border-border bg-background/85 backdrop-blur-md"
-          : "border-transparent bg-background",
-      )}
-    >
-      <div className="mx-auto flex h-18 max-w-page items-center justify-between px-5 sm:px-8 lg:px-12">
+    <header className="sticky top-0 z-40 px-3 pt-3 transition-all duration-300 sm:px-5 sm:pt-5">
+      <div
+        className={cn(
+          "mx-auto flex h-16 max-w-page items-center justify-between rounded-full border border-border bg-surface/95 px-4 backdrop-blur-md transition-shadow duration-300 sm:px-6 lg:px-8",
+          scrolled ? "shadow-[var(--shadow-lift)]" : "shadow-[var(--shadow-soft)]",
+        )}
+      >
         <Link href="/" aria-label="Outsource VA Philippines — home">
           <Logo />
         </Link>
@@ -106,7 +104,7 @@ export function Header() {
       {/* Mobile / tablet menu — shown below xl, see the note on the nav above. */}
       {menuOpen && (
         <div
-          className="fixed inset-x-0 bottom-0 top-18 z-40 overflow-y-auto border-t border-border bg-background xl:hidden"
+          className="fixed inset-x-0 bottom-0 top-[76px] z-40 overflow-y-auto border-t border-border bg-background sm:top-[84px] xl:hidden"
           id="mobile-menu"
         >
           <nav

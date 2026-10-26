@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ArrowUpRight } from "lucide-react";
 import { Button, type ButtonProps } from "@/components/ui/button";
 import { site } from "@/content/site";
 import { trackEvent } from "@/lib/analytics";
@@ -33,6 +34,12 @@ export function ConsultationButton({
         }}
       >
         {children}
+        <span
+          aria-hidden="true"
+          className="-mr-2 ml-1 inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-white/20"
+        >
+          <ArrowUpRight className="!size-3.5" />
+        </span>
       </a>
     </Button>
   );

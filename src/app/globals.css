@@ -14,43 +14,48 @@
 
 :root {
   /* Core surfaces */
-  --background: #fbf9f4; /* warm ivory */
+  --background: #f5f4f1; /* soft warm paper-gray */
   --surface: #ffffff; /* white cards */
-  --surface-muted: #f4f1e9; /* soft sand for alternating sections */
+  --surface-muted: #faf1e6; /* pale peach for alternating sections */
 
   /* Text */
-  --foreground: #1f3a2e; /* deep forest green — primary text */
-  --muted-foreground: #5c6b63; /* muted sage-grey for secondary text */
+  --foreground: #142420; /* near-black forest green — primary text */
+  --muted-foreground: #5f6b65; /* muted sage-grey for secondary text */
 
-  /* Brand accent */
-  --accent: #b08b4f; /* muted gold */
-  --accent-strong: #9a7638;
+  /* Brand accent — warm orange (replaces the former muted gold) */
+  --accent: #e8793a;
+  --accent-strong: #c8591f;
   --accent-foreground: #ffffff;
+  /* Gradient pair used on hero/banner cards */
+  --accent-gradient-from: #f8c272;
+  --accent-gradient-to: #df5a1f;
 
   /* Secondary accent */
   --sage: #8fa696;
   --sage-soft: #e4ece6;
   --terracotta: #c07a5b;
 
-  /* Primary action (deep forest) */
-  --primary: #1f3a2e;
-  --primary-hover: #16291f;
+  /* Primary action (near-black forest) */
+  --primary: #142420;
+  --primary-hover: #0c1915;
   --primary-foreground: #f7f4ea;
 
   /* Lines & focus */
-  --border: #e7e1d3; /* thin warm border */
+  --border: #e7e2d8; /* thin warm border */
   --input: #d9d2c2;
-  --ring: #b08b4f;
+  --ring: #e8793a;
 
   /* Feedback */
   --destructive: #b3492f;
   --success: #3d7a55;
 
-  /* Shape */
-  --radius: 0.75rem;
+  /* Shape — generous rounding throughout */
+  --radius: 1.25rem;
 
-  /* Fonts (wired to next/font in layout.tsx) */
-  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  /* Fonts (wired to next/font in layout.tsx). Both tokens point at the same
+     rounded display sans; h1-h4 lean on heavier weights (see @layer base)
+     for the bold/regular mix the brand uses within a single headline. */
+  --font-serif: var(--font-outfit), system-ui, -apple-system, sans-serif;
   --font-sans: var(--font-dm-sans), system-ui, -apple-system, sans-serif;
 }
 
@@ -64,6 +69,8 @@
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-gradient-from: var(--accent-gradient-from);
+  --color-accent-gradient-to: var(--accent-gradient-to);
 
   --color-sage: var(--sage);
   --color-sage-soft: var(--sage-soft);
@@ -82,14 +89,14 @@
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 10px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --radius-2xl: calc(var(--radius) + 16px);
 
-  --shadow-soft: 0 1px 2px rgba(31, 58, 46, 0.04), 0 8px 24px rgba(31, 58, 46, 0.06);
-  --shadow-lift: 0 4px 12px rgba(31, 58, 46, 0.08), 0 18px 40px rgba(31, 58, 46, 0.1);
+  --shadow-soft: 0 1px 2px rgba(20, 36, 32, 0.05), 0 8px 24px rgba(20, 36, 32, 0.07);
+  --shadow-lift: 0 4px 16px rgba(20, 36, 32, 0.1), 0 24px 48px rgba(20, 36, 32, 0.12);
 
   /*
     Single source of truth for page width, exposed as `max-w-page`.
@@ -125,10 +132,15 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
     text-wrap: balance;
+  }
+
+  /* Bold emphasis within a headline — wrap the key phrase in <strong>. */
+  h1 strong, h2 strong {
+    font-weight: 800;
   }
 
   p {
