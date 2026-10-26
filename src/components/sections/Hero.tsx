@@ -11,55 +11,65 @@ import { team } from "@/content/team";
 import { hero, heroLabels, trustIndicators } from "@/content/home";
 
 /** Each collage slot's position, size, and float timing — decorative only.
-    Durations/delays are staggered so the six photos drift out of sync,
-    like a loose cluster of balloons rather than one bouncing in unison. */
+    One photo anchors dead center (no empty middle) with the rest clustered
+    tightly around it — overlapping a little, like a huddle rather than a
+    ring with a hole in it. Durations/delays are staggered so the seven
+    photos drift out of sync, like a loose cluster of balloons rather than
+    one bouncing in unison. */
 const COLLAGE_ITEMS = [
   {
-    pos: "left-6 top-0",
-    size: "size-28 sm:size-36 lg:size-44",
-    chip: "bg-[#F5C84C]",
-    duration: "6.5s",
+    pos: "left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2",
+    size: "size-32 sm:size-40 lg:size-48",
+    chip: "bg-accent",
+    duration: "6.3s",
     delay: "0s",
   },
   {
-    pos: "right-0 top-10",
+    pos: "left-[4%] top-[2%]",
+    size: "size-24 sm:size-28 lg:size-36",
+    chip: "bg-[#F5C84C]",
+    duration: "6.5s",
+    delay: "-1s",
+  },
+  {
+    pos: "right-[2%] top-[8%]",
     size: "size-24 sm:size-32 lg:size-40",
-    chip: "bg-accent",
-    duration: "5.5s",
-    delay: "-1.5s",
-  },
-  {
-    pos: "left-1/2 top-2 -translate-x-1/2",
-    size: "size-20 sm:size-24 lg:size-28",
     chip: "bg-[#6FC6F2]",
-    duration: "7s",
-    delay: "-3s",
+    duration: "5.5s",
+    delay: "-2.5s",
   },
   {
-    pos: "left-0 bottom-16",
+    pos: "left-0 top-[48%] -translate-y-1/2",
+    size: "size-20 sm:size-24 lg:size-28",
+    chip: "bg-[#C9A8F5]",
+    duration: "7s",
+    delay: "-3.5s",
+  },
+  {
+    pos: "right-0 top-[52%] -translate-y-1/2",
+    size: "size-20 sm:size-24 lg:size-28",
+    chip: "bg-accent-strong",
+    duration: "6s",
+    delay: "-1.8s",
+  },
+  {
+    pos: "left-[8%] bottom-0",
     size: "size-24 sm:size-28 lg:size-36",
     chip: "bg-[#FF8FA3]",
-    duration: "6s",
-    delay: "-2s",
-  },
-  {
-    pos: "right-6 bottom-0",
-    size: "size-28 sm:size-36 lg:size-44",
-    chip: "bg-primary",
     duration: "6.8s",
     delay: "-4s",
   },
   {
-    pos: "left-1/4 bottom-0",
-    size: "size-20 sm:size-24 lg:size-28",
-    chip: "bg-[#C9A8F5]",
+    pos: "right-[4%] bottom-[2%]",
+    size: "size-28 sm:size-36 lg:size-44",
+    chip: "bg-primary",
     duration: "5.8s",
-    delay: "-0.8s",
+    delay: "-2.8s",
   },
 ];
 
 export function Hero() {
-  const collage = team.slice(0, 6);
+  const collage = team.slice(0, 7);
 
   return (
     <section className="relative overflow-hidden">
@@ -139,9 +149,10 @@ export function Hero() {
               );
             })}
 
-            {/* Floating skill widgets */}
-            <WidgetCard className="left-0 top-6">{heroLabels[0]}</WidgetCard>
-            <WidgetCard className="bottom-10 right-0">{heroLabels[1]}</WidgetCard>
+            {/* Floating skill widgets — pushed just outside the photo
+                cluster so they read as a separate layer, not another chip. */}
+            <WidgetCard className="-left-3 top-1/4 z-20">{heroLabels[0]}</WidgetCard>
+            <WidgetCard className="-right-3 bottom-1/4 z-20">{heroLabels[1]}</WidgetCard>
           </div>
         </Reveal>
       </Container>
