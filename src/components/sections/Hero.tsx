@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -9,16 +10,56 @@ import { TalentAvatar } from "@/components/talent/TalentAvatar";
 import { team } from "@/content/team";
 import { hero, heroLabels, trustIndicators } from "@/content/home";
 
-/** Chip colors behind each collage photo — decorative only. */
-const CHIP_COLORS = [
-  "bg-[#F5C84C]",
-  "bg-accent",
-  "bg-[#FF8FA3]",
-  "bg-primary",
+/** Each collage slot's position, size, and float timing — decorative only.
+    Durations/delays are staggered so the six photos drift out of sync,
+    like a loose cluster of balloons rather than one bouncing in unison. */
+const COLLAGE_ITEMS = [
+  {
+    pos: "left-6 top-0",
+    size: "size-28 sm:size-36 lg:size-44",
+    chip: "bg-[#F5C84C]",
+    duration: "6.5s",
+    delay: "0s",
+  },
+  {
+    pos: "right-0 top-10",
+    size: "size-24 sm:size-32 lg:size-40",
+    chip: "bg-accent",
+    duration: "5.5s",
+    delay: "-1.5s",
+  },
+  {
+    pos: "left-1/2 top-2 -translate-x-1/2",
+    size: "size-20 sm:size-24 lg:size-28",
+    chip: "bg-[#6FC6F2]",
+    duration: "7s",
+    delay: "-3s",
+  },
+  {
+    pos: "left-0 bottom-16",
+    size: "size-24 sm:size-28 lg:size-36",
+    chip: "bg-[#FF8FA3]",
+    duration: "6s",
+    delay: "-2s",
+  },
+  {
+    pos: "right-6 bottom-0",
+    size: "size-28 sm:size-36 lg:size-44",
+    chip: "bg-primary",
+    duration: "6.8s",
+    delay: "-4s",
+  },
+  {
+    pos: "left-1/4 bottom-0",
+    size: "size-20 sm:size-24 lg:size-28",
+    chip: "bg-[#C9A8F5]",
+    duration: "5.8s",
+    delay: "-0.8s",
+  },
 ];
 
 export function Hero() {
-  const collage = team.slice(0, 4);
+  const collage = team.slice(0, 6);
 
   return (
     <section className="relative overflow-hidden">
@@ -71,23 +112,32 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Visual composition — staggered pill-shaped collage with color
-            chips behind each photo, echoing a bold, playful collage style. */}
+        {/* Visual composition — a loose, floating cluster of color-chipped
+            photos, each bobbing on its own timer like balloons. */}
         <Reveal delay={120} className="relative">
-          <div className="relative mx-auto h-[22rem] w-full max-w-xs sm:h-[26rem] sm:max-w-sm lg:h-[30rem] lg:max-w-md">
-            {collage.map((member, i) => (
-              <div
-                key={member.slug}
-                className={`absolute size-28 rounded-[1.5rem] p-1.5 shadow-[var(--shadow-lift)] sm:size-36 sm:rounded-[1.75rem] sm:p-2 lg:size-44 lg:rounded-[2rem] ${CHIP_COLORS[i % CHIP_COLORS.length]} ${COLLAGE_POSITION[i]}`}
-              >
-                <TalentAvatar
-                  member={member}
-                  priority={i === 0}
-                  className="h-full w-full rounded-[1.1rem] sm:rounded-[1.35rem] lg:rounded-[1.5rem]"
-                  sizes="176px"
-                />
-              </div>
-            ))}
+          <div className="relative mx-auto h-[26rem] w-full max-w-sm sm:h-[30rem] sm:max-w-md lg:h-[34rem] lg:max-w-lg">
+            {collage.map((member, i) => {
+              const item = COLLAGE_ITEMS[i % COLLAGE_ITEMS.length];
+              return (
+                <div
+                  key={member.slug}
+                  className={`animate-float absolute rounded-[1.5rem] p-1.5 shadow-[var(--shadow-lift)] sm:rounded-[1.75rem] sm:p-2 lg:rounded-[2rem] ${item.chip} ${item.pos} ${item.size}`}
+                  style={
+                    {
+                      "--float-duration": item.duration,
+                      "--float-delay": item.delay,
+                    } as CSSProperties
+                  }
+                >
+                  <TalentAvatar
+                    member={member}
+                    priority={i === 0}
+                    className="h-full w-full rounded-[1.1rem] sm:rounded-[1.35rem] lg:rounded-[1.5rem]"
+                    sizes="176px"
+                  />
+                </div>
+              );
+            })}
 
             {/* Floating skill widgets */}
             <WidgetCard className="left-0 top-6">{heroLabels[0]}</WidgetCard>
@@ -98,13 +148,6 @@ export function Hero() {
     </section>
   );
 }
-
-const COLLAGE_POSITION = [
-  "left-8 top-0",
-  "right-4 top-16",
-  "left-0 bottom-0",
-  "bottom-8 right-10",
-];
 
 function WidgetCard({
   children,

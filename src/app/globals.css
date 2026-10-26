@@ -233,6 +233,30 @@
 }
 
 /*
+  Gentle balloon-style float — see components/sections/Hero.tsx. Each item
+  sets its own --float-duration/--float-delay so the collage drifts out of
+  sync, not in lockstep. Automatically neutralised by the global
+  prefers-reduced-motion rule further down (it collapses every animation's
+  duration to ~0), so no separate opt-out is needed here.
+*/
+@keyframes float-balloon {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-2deg);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float-balloon var(--float-duration, 6s) ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
+  }
+}
+
+/*
   Tools marquee — see components/sections/ToolsMarquee.tsx
 
   The track holds two identical copies of the tool list, so translating it by
@@ -281,6 +305,10 @@
   overrides it outright.
 */
 @media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none !important;
+    transform: none !important;
+  }
   .animate-tools-marquee {
     animation: none !important;
     transform: none !important;
