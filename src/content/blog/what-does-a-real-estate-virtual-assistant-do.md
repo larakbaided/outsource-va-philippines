@@ -3,6 +3,7 @@ title: "What Does a Real Estate Virtual Assistant Do? (And When to Hire One)"
 description: "A real estate virtual assistant handles lead follow-up, CRM, transaction coordination, and listings — so agents can focus on clients. Here's what they do and when to hire one."
 date: "2026-10-26"
 author: "Lara"
+coverImage: "/blog/what-does-a-real-estate-virtual-assistant-do.webp"
 excerpt: "Leads go cold, your CRM is a mess, and transaction paperwork eats your week. Here's exactly what a real estate virtual assistant handles, and the signs it's time to hire one."
 tags: ["Real Estate", "Virtual Assistants"]
 keywords:

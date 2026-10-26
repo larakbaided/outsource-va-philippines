@@ -3,6 +3,7 @@ title: "How Much Does a Filipino Virtual Assistant Cost?"
 description: "A clear, honest breakdown of what a Filipino virtual assistant costs — what drives the number, our published rate card, and why the cheapest option rarely saves money."
 date: "2026-07-26"
 author: "Lara"
+coverImage: "/blog/how-much-does-a-filipino-virtual-assistant-cost.webp"
 excerpt: "The honest answer is 'it depends' — but here's exactly what it depends on, and the published rate card that reflects it."
 tags: ["Pricing", "Hiring"]
 keywords:
